@@ -16,6 +16,10 @@
                 <div class="clearfix text-center">
                     <h3 id="index" class="fl-left">Danh sách danh mục</h3>
                     <a href="?mod=category&action=addCat" title="" id="add-new" class="fl-left btn btn-danger">Thêm mới</a>
+                    <form method="POST" class="form-s fl-right mt-4">
+                        <input type="text" name="keyw" id="s">
+                        <input type="submit" name="btn-submit" value="Tìm kiếm">
+                    </form>
                 </div>
             </div>
             <div class="section" id="detail-page">
@@ -23,10 +27,7 @@
                     <div class="table-responsive">
                         <div class="filter-wp clearfix">
 
-                            <form method="POST" class="form-s fl-right mb-2">
-                                <input type="text" name="keyw" id="s">
-                                <input type="submit" name="btn-submit" value="Tìm kiếm">
-                            </form>
+
                         </div>
                         <table class="table table-striped table-bordered">
                             <thead class="thead-dark text-center">
@@ -36,8 +37,8 @@
                                     <th>Tiêu đề</th>
                                     <th>Hình ảnh</th>
                                     <th>Thứ tự</th>
-                                     <th>Trang thái</th>
-                                    <!-- <th>Người tạo</th> --> 
+                                    <th>Trang thái</th>
+                                    <!-- <th>Người tạo</th> -->
                                     <th>Thời gian tạo</th>
                                     <!-- <th>Access</th> -->
                                 </tr>
