@@ -13,7 +13,7 @@ get_header();
                     <div class="row">
                         <div class="col-md-3 p-4">
                             <div class="card mb-3 p-3 admin_role">
-                                <a href="?page=list_customer" class="text-dark">
+                                <a href="?mod=users&action=listUser" class="text-dark">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
                                             <img src="public/images/user.jpg" class="card-img mt-3" alt="">
@@ -32,7 +32,7 @@ get_header();
                         </div>
                         <div class="col-md-3 p-4">
                             <div class="card mb-3 p-3 admin_role">
-                                <a href="?page=list_cat" class="text-dark">
+                                <a href="?mod=category&action=index" class="text-dark">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
                                             <img src="public/images/category.jpg" class="card-img" style="width: 85%;"
@@ -52,7 +52,7 @@ get_header();
                         </div>
                         <div class="col-md-3 p-4">
                             <div class="card mb-3 p-3 admin_role">
-                                <a href="?page=list_product" class="text-dark">
+                                <a href="?mod=product&action=index" class="text-dark">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
                                             <img src="public/images/product.jpg" class="card-img mt-3" alt="">
@@ -71,7 +71,7 @@ get_header();
                         </div>
                         <div class="col-md-3 p-4">
                             <div class="card mb-3 p-3 admin_role">
-                                <a href="?page=list_post" class="text-dark">
+                                <a href="?mod=post&action=listPost" class="text-dark">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
                                             <img src="public/images/post.jpg" class="card-img mt-3" alt="">
