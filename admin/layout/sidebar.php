@@ -1,4 +1,3 @@
-
 <div id="sidebar" class="fl-left">
     <ul id="sidebar-menu">
         <li class="nav-item">
@@ -75,7 +74,7 @@
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="?page=list_widget" title="" class="nav-link">Danh sách bình luận</a>
+                    <a href="?mod=comment&action=index" title="" class="nav-link">Danh sách bình luận</a>
                 </li>
             </ul>
         </li>
