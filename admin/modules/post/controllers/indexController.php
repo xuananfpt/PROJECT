@@ -51,6 +51,12 @@ function addPostAction()
         } else {
             $post_title = $_POST['post_title'];
         }
+
+        if (empty($_POST['post_content'])) {
+            $error['post_content'] = "Không được để trông trường này";
+        } else {
+            $post_content = $_POST['post_content'];
+        }
         //status
         if (empty($_POST['post_status'])) {
             $error['post_status'] = "Không được để trông trường này";
@@ -84,6 +90,7 @@ function addPostAction()
         if (empty($error)) {
             $data = array(
                 'post_title' => $post_title,
+                'post_content' => $post_content,
                 'post_status' => $post_status,
                 'post_creator' => $post_creator,
                 'cat_post' => $cat_post,
@@ -122,6 +129,8 @@ function editPostAction()
 
         $post_title = $_POST['post_title'];
 
+        $post_content = $_POST['post_content'];
+
         $post_status = $_POST['post_status'];
 
         $post_creator = $_POST['post_creator'];
@@ -142,6 +151,7 @@ function editPostAction()
         // show_array($_POST);
         $data = array(
             'post_title' => $post_title,
+            'post_content' => $post_content,
             'post_status' => $post_status,
             'post_creator' => $post_creator,
             'cat_post' => $cat_post,

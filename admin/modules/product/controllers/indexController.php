@@ -79,13 +79,13 @@ function addProductAction()
 
 
         //Lấy dữ liệu
-        // $get_image = get_list_products();
-        // // show_array($get_image);
-        // //kiểu dữ liệu trả về mảng 2 chiều, lấy phần tử đầu tiên là 0
-        // $id_pros = $get_image[0]['product_id'];
+        $get_image = get_list_products();
+        // show_array($get_image);
+        //kiểu dữ liệu trả về mảng 2 chiều, lấy phần tử đầu tiên là 0
+        $id_pros = $get_image[0]['product_id'];
 
-        // $id_pro = $id_pros + 1;
-        // $images = $_FILES['images']['name'];
+        $id_pro = $id_pros + 1;
+        $images = $_FILES['images']['name'];
 
         if (empty($error)) {
             $data = array(
@@ -101,17 +101,17 @@ function addProductAction()
 
             );
             insertProduct($data);
-            // foreach ($images as $key => $value) {
-            //     $tardir_files = $tardir . $value;
+            foreach ($images as $key => $value) {
+                $tardir_files = $tardir . $value;
 
 
-            //     move_uploaded_file($_FILES['images']['tmp_name'][$key], $tardir_files);
-            //     $image = array(
-            //         'product_id' => $id_pro,
-            //         'image_name' => $value
-            //     );
-            //     insertProduct_image($image);
-            // }
+                move_uploaded_file($_FILES['images']['tmp_name'][$key], $tardir_files);
+                $image = array(
+                    'product_id' => $id_pro,
+                    'image_name' => $value
+                );
+                insertProduct_image($image);
+            }
 
 
 

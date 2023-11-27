@@ -1,39 +1,47 @@
 <?php
-function update_pass_user_login($data, $username) {
+function update_pass_user_login($data, $username)
+{
     db_update('tbl_users', $data, "username = '$username'");
 }
-function check_pass_old($pass_old) {
+function check_pass_old($pass_old)
+{
     $check_email = db_num_rows("SELECT * FROM tbl_users WHERE `password` = '$pass_old'");
     if ($check_email > 0) {
         return true;
     }
     return false;
 }
-function update_user_login($username, $data) {
+function update_user_login($username, $data)
+{
     db_update('tbl_users', $data, "username = '$username'");
 }
-function get_user_by_username($username) {
+function get_user_by_username($username)
+{
     $item = db_fetch_row("SELECT * FROM `tbl_users` WHERE `username` = '$username'");
-    if(!empty($item)) {
-    return $item;
+    if (!empty($item)) {
+        return $item;
     }
 }
 //Cập nhật mật khẩu lại lên database nè....
-function update_pass($data, $reset_token) {
+function update_pass($data, $reset_token)
+{
     db_update('tbl_users', $data, "reset_token = '$reset_token'");
 }
-function check_reset_token($reset_token) {
+function check_reset_token($reset_token)
+{
     $check_reset = db_num_rows("SELECT * FROM tbl_users WHERE `reset_token` = '$reset_token'");
     if ($check_reset > 0) {
         return true;
     }
     return false;
 }
-function update_reset_token($data, $email) {
+function update_reset_token($data, $email)
+{
     db_update('tbl_users', $data, "`email` ='{$email}'");
 }
 //Kiểm tra tồn tại trên hệ thống hay không
-function check_email($email) {
+function check_email($email)
+{
     $check_email = db_num_rows("SELECT * FROM tbl_users WHERE `email` = '$email'");
     if ($check_email > 0) {
         return true;
@@ -74,19 +82,27 @@ function user_exists($username, $email)
 //     }
 //     return false;
 // }
-function check_login($username, $password) {
+function check_login($username, $password)
+{
     $check_user = db_num_rows("SELECT * FROM tbl_users WHERE username = '$username' AND password = '$password'");
-    if($check_user > 0) {
+    if ($check_user > 0) {
         return true;
     }
     return false;
 }
 
-function get_user($username) {
+function get_user($username)
+{
     $user_image = db_fetch_row("SELECT * FROM tbl_users WHERE username = '$username'");
     return $user_image;
 }
-function get_list_user() {
+function get_list_user()
+{
     $list_user = db_fetch_array("SELECT * FROM tbl_users");
     return $list_user;
+}
+function load_all_key_word($search)
+{
+    $result = db_fetch_array("SELECT * FROM `tbl_users` where `username` like '%{$search}%' or `email` like '%{$search}%'");
+    return $result;
 }

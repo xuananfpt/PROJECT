@@ -15,6 +15,10 @@
             <div class="section" id="title-page">
                 <div class="clearfix text-center">
                     <h3 id="index" class="fl-left">Thùng rác</h3>
+                    <form method="POST" class="form-s fl-right">
+                        <input type="text" name="keyw" id="s">
+                        <input type="submit" name="btn-submit" value="Tìm kiếm">
+                    </form>
                     <!-- <a href="?mod=category&action=addCat" title="" id="add-new" class="fl-left">Thêm mới</a> -->
                 </div>
             </div>
@@ -22,10 +26,7 @@
                 <div class="section-detail">
                     <div class="table-responsive">
                         <div class="filter-wp clearfix">
-                            <form method="POST" class="form-s fl-right">
-                                <input type="text" name="keyw" id="s">
-                                <input type="submit" name="btn-submit" value="Tìm kiếm">
-                            </form>
+
                         </div>
                         <table class="table table-striped table-bordered">
                             <thead class="thead-dark text-center">
@@ -67,13 +68,14 @@
                                             </div>
 
                                         </td>
-                                        <td><div class="text-center">
+                                        <td>
+                                            <div class="text-center">
 
-                                       
-                                            <span class="tbody-thumb mt-1 ">
 
-                                                <img class="" width="100px" height="auto" src="public/images/<?= $category['cat_image'] ?>" alt="">
-                                            </span>
+                                                <span class="tbody-thumb mt-1 ">
+
+                                                    <img class="" width="100px" height="auto" src="public/images/<?= $category['cat_image'] ?>" alt="">
+                                                </span>
                                             </div>
                                         </td>
                                         <td>
@@ -102,8 +104,8 @@
                     <p id="desc" class="fl-left">
                     <div class="filter-wp clearfix">
                         <ul class="post-status fl-left">
-                            <li class="all"><a href="?mod=category&action=index">Trang trước |</a></li>
-                            <li class="all"><a href="">Tất cả <span class="count">(<?= $stt ?>)</span></a></li>
+                            <li class="all btn bg-danger "><a class="text-white" href="?mod=category&action=index">Trang trước</a></li>
+                            <li class="all btn bg-danger "><a class="text-white" href="">Tất cả <span class="count text-white">(<?= $stt ?>)</span></a></li>
                             <!-- <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
                             <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li> -->
                             <!-- <li class="pending"><a href="?mod=category&action=trashCat">Thùng rác<span class="count"></span></a></li> -->

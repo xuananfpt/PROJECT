@@ -24,6 +24,8 @@ get_header();
                             </div>
                         </div>
 
+
+
                         <div class="col-md-4">
                             <label for="post_status">Trạng thái</label>
                             <input class="w-100 form-control" type="text" name="post_status" id="post_status">
@@ -61,15 +63,20 @@ get_header();
                         </div>
                         <!-- <label for="desc">Mô tả</label>
                         <textarea name="desc" id="desc" class="ckeditor"></textarea> -->
+                        <div class="col-md-12"><label>Hình ảnh</label>
+                            <div id="uploadFile">
+                                <img src="public/images/noimage.jpg" id="img" height="300px" class="w-25">
+                                <input class="d-none" type="file" name="post_image" id="upload">
+                                <label for="upload" class="w-25 bg-dark text-light text-center h-50">
+                                    <i class="fa-solid fa-upload"></i>
+                                </label>
+                            </div>
+                        </div>
                         <div class="col-md-12">
-                            <div class="col-md-12"><label>Hình ảnh</label>
-                                <div id="uploadFile">
-                                    <img src="public/images/noimage.jpg" id="img" height="300px" class="w-25">
-                                    <input class="d-none" type="file" name="post_image" id="upload">
-                                    <label for="upload" class="w-25 bg-dark text-light text-center h-50">
-                                        <i class="fa-solid fa-upload"></i>
-                                    </label>
-                                </div>
+                            <label for="post_title">Nội dung</label>
+                            <textarea class="w-100 form-control" type="text" name="post_content" id="post_content"></textarea>
+                            <div class="error">
+                                <?php echo form_error('post_content') ?>
                             </div>
                         </div>
 
