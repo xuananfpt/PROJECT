@@ -9,34 +9,58 @@ get_header();
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix">
-                    <h3 id="index" class="fl-left">Thêm trang</h3>
+                    <h3 id="index" class="fl-left">Cập nhật</h3>
                 </div>
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST">
-                        <label for="post_title">Tiêu đề</label>
-                        <input type="text" name="post_title" id="post_title" value="<?php echo $post_item['post_title'] ?>">
-                        <label for="post_status">Trạng thái</label>
-                        <input type="text" name="post_status" id="post_status" value="<?php echo $post_item['post_status'] ?>">
-                        <label for="post_creator">Người tạo</label>
-                        <input type="text" name="post_creator" id="post_creator" value="<?php echo $post_item['post_creator'] ?>">
-                        <label for="create_time">Thời gian tạo</label>
-                        <input type="text" name="create_time" id="create_time" value="<?php echo $post_item['create_time'] ?>">
-                        <label for="cat_post">Danh mục </label>
-                        <select name="cat_post" id="">
-                            <option value="0">Chọn danh mục</option>
-                            <option value="Danh mục 1" <?php if($post_item['cat_post'] == "Danh mục 1") echo "selected" ?>>Danh mục 1</option>
-                            <option value="Danh mục 2" <?php if ($post_item['cat_post'] == "Danh mục 2")
-                                echo "selected" ?>>Danh mục 2</option>
-                        </select>
-                        <label>Hình ảnh</label>
-                        <div id="uploadFile">
-                            <input type="file" name="file" id="upload-thumb">
-                            <input type="submit" name="btn-upload-thumb" value="Upload" id="btn-upload-thumb">
-                            <img src="public/images/img-thumb.png">
+                    <form method="POST" enctype="multipart/form-data" class="row">
+                        <div class="col-md-4">
+                            <label for="post_title">Tiêu đề</label>
+                            <input class="w-100 form-control" type="text" name="post_title" id="post_title" value="<?php echo $post_item['post_title'] ?>">
                         </div>
-                        <button type="submit" name="btn-edit" id="btn-submit">Cập nhật</button>
+
+                        <div class="col-md-4">
+                            <label for="post_status">Trạng thái</label>
+                            <input class="w-100 form-control" type="text" name="post_status" id="post_status" value="<?php echo $post_item['post_status'] ?>">
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <label for="post_creator">Người tạo</label>
+                            <input class="w-100 form-control" type="text" name="post_creator" id="post_creator" value="<?php echo $post_item['post_creator'] ?>">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="create_time">Thời gian tạo</label>
+                            <input class="w-100 form-control" type="text" name="create_time" id="create_time" value="<?php echo $post_item['create_time'] ?>">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="cat_post">Danh mục </label>
+                            <select class="w-100 form-control" name="cat_post" id="">
+                                <option value="0">Chọn danh mục</option>
+                                <option value="Danh mục 1" <?php if ($post_item['cat_post'] == "Danh mục 1") echo "selected" ?>>Danh mục 1</option>
+                                <option value="Danh mục 2" <?php if ($post_item['cat_post'] == "Danh mục 2")
+                                                                echo "selected" ?>>Danh mục 2</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-12"><label>Hình ảnh</label>
+                                <div id="uploadFile">
+                                    <img src="public/images/noimage.jpg" id="img" height="300px" class="w-25">
+                                    <input class="d-none" type="file" name="post_image" id="upload">
+                                    <label for="upload" class="w-25 bg-dark text-light text-center h-50">
+                                        <i class="fa-solid fa-upload"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ml-3 mt-2">
+                            <button class="btn btn-danger" type="submit" name="btn-edit" id="btn-submit">Cập nhật</button>
+                        </div>
                     </form>
                 </div>
             </div>

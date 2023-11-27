@@ -12,16 +12,15 @@
     <link href="public/style.css" rel="stylesheet" type="text/css" />
     <link href="public/responsive.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
 
 
-   
+
 
 </head>
 
@@ -43,21 +42,21 @@
                         <li>
                             <a href="?page=list_customer" title="">Tài khoản</a>
                             <ul class="sub-menu">
-                              
+
                                 <li>
-                                    <a href="?page=list_customer" title="">Danh sách khách hàng</a>
+                                    <a href="?mod=users&action=listUser" title="">Danh sách khách hàng</a>
                                 </li>
-                           
+
                             </ul>
                         </li>
-                         <li>
+                        <li>
                             <a href="?page=list_cat" title="">Danh mục</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=add_cat" title="">Thêm mới</a>
+                                    <a href="?mod=category&action=addCat" title="">Thêm mới</a>
                                 </li>
                                 <li>
-                                    <a href="?page=list_cat" title="">Danh sách danh mục</a>
+                                    <a href="?mod=category&action=index" title="">Danh sách danh mục</a>
                                 </li>
                             </ul>
                         </li>
@@ -65,13 +64,13 @@
                             <a href="?page=list_product" title="">Sản phẩm</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=add_product" title="">Thêm mới</a>
+                                    <a href="?mod=product&action=addProduct" title="">Thêm mới</a>
                                 </li>
                                 <li>
-                                    <a href="?page=list_product" title="">Danh sách sản phẩm</a>
+                                    <a href="?mod=product&action=index" title="">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="?page=list_cat" title="">Danh mục sản phẩm</a>
+                                    <a href="?mod=product&action=manaProduct" title="">Danh mục sản phẩm</a>
                                 </li>
                             </ul>
                         </li>
@@ -79,10 +78,10 @@
                             <a href="" title="">Bài viết</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=add_post" title="">Thêm mới</a>
+                                    <a href="?mod=post&action=addPost" title="">Thêm mới</a>
                                 </li>
                                 <li>
-                                    <a href="?page=list_post" title="">Danh sách bài viết</a>
+                                    <a href="?mod=post&action=listPost" title="">Danh sách bài viết</a>
                                 </li>
                             </ul>
                         </li>
@@ -110,13 +109,12 @@
                         </li>
                     </ul>
                     <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
-                        <button class="dropdown-toggle clearfix" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="true">
-                            <div id=""  class="fl-left">
+                        <button class="dropdown-toggle clearfix" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <div id="" class="fl-left">
                                 <img width="50px" class="rounded-circle" height="auto" src="public/images/<?php if (!empty($_SESSION['image_user']))
-                                    echo $_SESSION['image_user'] ?>">
+                                                                                                                echo $_SESSION['image_user'] ?>">
                             </div>
-                            <h3 id="account" class="fl-right"><?php     if(!empty($_SESSION['user_login'])) echo $_SESSION['user_login'] ?></h3>
+                            <h3 id="account" class="fl-right"><?php if (!empty($_SESSION['user_login'])) echo $_SESSION['user_login'] ?></h3>
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="?mod=users&action=update" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
@@ -125,4 +123,3 @@
                     </div>
                 </div>
             </div>
-            
