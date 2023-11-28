@@ -88,7 +88,7 @@ get_header()
                             <span><?php echo form_error('product_detail') ?></span>
                         </div>
 
-                        <div class="mt-2">
+                        <div class="mt-2 ml-3">
                             <button class="btn btn-danger" type="submit" name="btn-submit" id="btn-submit">Thêm mới</button>
                         </div>
                     </form>

@@ -10,22 +10,18 @@ get_header();
             <div class="section" id="title-post">
                 <div class="clearfix">
                     <h3 id="index" class="fl-left">Thùng rác</h3>
-                    <a href="?mod=post&action=addPost" title="" id="add-new" class="fl-left btn-danger">Thêm mới</a>
+                    <form method="POST" class="form-s fl-right mt-4">
+                        <input type="text" name="search" id="search">
+                        <input type="submit" name="btn-search" value="Tìm kiếm">
+                    </form>
+                    <!-- <a href="?mod=post&action=addPost" title="" id="add-new" class="fl-left btn-danger">Thêm mới</a> -->
                 </div>
             </div>
             <div class="section" id="detail-post">
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
-                        <ul class="post-status fl-left">
-                            <li class="all"><a href="?mod=post&action=listPost">Trang trước <span class="count"></span></a> |</li>
-                            <!-- <li class="publish"><a href="">Đã đăng <span class="count">(5)</span></a> |</li>
-                            <li class="pending"><a href="">Chờ xét duyệt <span class="count">(5)</span> |</a></li> -->
-                            <li class="trash"><a href="?mod=post&action=trashPost">Thùng rác <span class="count"></span></a></li>
-                        </ul>
-                        <form method="POST" class="form-s fl-right">
-                            <input type="text" name="search" id="search">
-                            <input type="submit" name="btn-search" value="Tìm kiếm">
-                        </form>
+
+
                     </div>
                     <div class="actions">
                         <form method="GET" action="" class="form-actions">
@@ -186,6 +182,12 @@ get_header();
             </div>
             <div class="section" id="paging-wp">
                 <div class="section-detail clearfix">
+                    <ul class="post-status fl-left">
+                        <li class="all btn bg-danger"><a class="text-white" href="?mod=post&action=listPost">Trang trước <span class="count text-white"></span></a></li>
+                        <!-- <li class="publish"><a href="">Đã đăng <span class="count">(5)</span></a> |</li>
+                            <li class="pending"><a href="">Chờ xét duyệt <span class="count">(5)</span> |</a></li> -->
+                        <li class="trash btn bg-danger"><a href="?mod=post&action=trashPost">Thùng rác <span class="count text-white"><?= $i ?></span></a></li>
+                    </ul>
                     <ul id="list-paging" class="fl-right">
                         <li>
                             <a href="" title="">

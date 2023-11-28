@@ -23,9 +23,9 @@
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
 
-                        <form method="GET" class="form-s fl-right">
-                            <input type="text" name="s" id="s">
-                            <input type="submit" name="sm_s" value="Tìm kiếm">
+                        <form method="POST" class="form-s fl-right">
+                            <input type="text" name="search" id="s">
+                            <input type="submit" name="btn-search" value="Tìm kiếm">
                         </form>
                         <form method="GET" action="" class="form-actions">
                             <select name="actions">
@@ -44,9 +44,9 @@
                             <input type="submit" name="sm_action" value="Áp dụng">
                         </form>
                     </div> -->
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered">
-                            <thead class="thead-dark">
+                    <div class="table-responsive mt-3">
+                        <table class="table list-table-wp">
+                            <thead class="">
                                 <tr>
                                     <th>#</th>
                                     <th>STT</th>

@@ -29,8 +29,8 @@
 
 
                         </div>
-                        <table class="table table-striped table-bordered">
-                            <thead class="thead-dark text-center">
+                        <table class="table list-table-wp">
+                            <thead class=" text-center">
                                 <tr>
                                     <th>#</th>
                                     <th>STT</th>
@@ -104,11 +104,11 @@
             <div class="section" id="paging-wp">
                 <div class="section-detail clearfix">
                     <p id="desc" class="fl-left">
-                    <ul class="post-status fl-left">
-                        <li class="all"><a href="">Tất cả <span class="count">(<?= $stt ?>)</span></a> |</li>
+                    <ul class="post-status fl-left mt-2">
+                        <li class="all btn bg-danger "><a href="" class="text-white">Tất cả <span class="count text-white">(<?= $stt ?>)</span></a></li>
                         <!-- <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
                         <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li> -->
-                        <li class="pending"><a href="?mod=category&action=trashCat">Thùng rác<span class="count"></span></a></li>
+                        <li class="pending btn bg-danger"><a class="text-white" href="?mod=category&action=trashCat">Thùng rác<span class="count text-white"></span></a></li>
                     </ul>
                     </p>
                     <ul id="list-paging" class="fl-right">
