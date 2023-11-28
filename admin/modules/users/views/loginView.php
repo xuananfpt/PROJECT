@@ -14,6 +14,7 @@
     }
 
     .form-login {
+        margin-top: 70px;
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -72,6 +73,7 @@
     }
 
     .error {
+        color: red;
         margin-top: 10px;
     }
 
@@ -173,6 +175,9 @@
                     <p class="error">
                         <?php echo form_error('username') ?>
                     </p>
+                    <p class=" error">
+                        <?php echo form_error('account') ?>
+                    </p>
                 </div>
                 <!-- <input type="text" placeholder="Nhập tài khoản của bạn" name="name" id="" /> -->
 
@@ -185,6 +190,9 @@
                 <div class="error">
                     <p class="error">
                         <?php echo form_error('password') ?>
+                    </p>
+                    <p class=" error">
+                        <?php echo form_error('account') ?>
                     </p>
                 </div>
                 <div class="show-pass">
@@ -199,12 +207,10 @@
                     <input type="submit" name="btn-login" id="btn-login" value="ĐĂNG NHẬP"">
            
                 </div>
-                <p class=" error">
-                    <?php echo form_error('account') ?>
-                    </p>
-                    <div class="help">
-                        <span>Bạn chưa có tài khoản ! Vui lòng <a href="">Đăng Ký</a></span>
-                    </div>
+                
+                    <div class=" help">
+                    <span>Bạn chưa có tài khoản ! Vui lòng <a href="">Đăng Ký</a></span>
+                </div>
             </form>
         </div>
         <footer></footer>

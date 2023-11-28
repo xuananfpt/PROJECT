@@ -1,4 +1,5 @@
 <?php
+
 use MicrosoftAzure\Storage\Common\Internal\Validate;
 use PhpCsFixer\Fixer\Alias\NoMixedEchoPrintFixer;
 
@@ -46,7 +47,7 @@ function loginAction()
         #Kết luận
         if (empty($error)) { {
                 if (check_login($username, $password)) {
-                    
+
                     // Lưu trữ phiên đăng nhập
                     $_SESSION['is_login'] = true;
                     $_SESSION['user_login'] = $username;
@@ -203,7 +204,6 @@ function checkEmailAction()
         }
         load_view('checkEmail');
     }
-
 }
 // function resetOkAction() {
 //     load_view('resetOK');
@@ -270,9 +270,17 @@ function resetOkAction()
 {
     load_view('resetOk');
 }
-function listUserAction() {
-    $list_user = get_list_user();
-    $data['list_user'] = $list_user;
-    // show_array($list_user);
-    load_view('listUser', $data);
+function listUserAction()
+{
+    if (isset($_POST['btn-search'])) {
+        $search = $_POST['search'];
+        $list_user = load_all_key_word($search);
+        $data['list_user'] = $list_user;
+        load_view('listUser', $data);
+    } else {
+        $list_user = get_list_user();
+        $data['list_user'] = $list_user;
+        // show_array($list_user);
+        load_view('listUser', $data);
+    }
 }

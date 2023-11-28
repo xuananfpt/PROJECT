@@ -6,6 +6,10 @@
             <div class="section" id="title-page">
                 <div class="clearfix">
                     <h3 id="index" class="fl-left">Thùng rác</h3>
+                    <form method="POST" class="form-s fl-right mt-4 ">
+                        <input type="text" name="keyw" id="s">
+                        <input type="submit" name="btn-submit" value="Tìm kiếm">
+                    </form>
                     <!-- <a href="?mod=product&action=addProduct" title="" id="add-new" class="fl-left">Thêm mới</a> -->
                 </div>
             </div>
@@ -14,10 +18,7 @@
                     <div class="section-detail">
                         <div class="filter-wp clearfix">
 
-                            <form method="POST" class="form-s fl-right mb-2 ">
-                                <input type="text" name="keyw" id="s">
-                                <input type="submit" name="btn-submit" value="Tìm kiếm">
-                            </form>
+
                         </div>
                         <!-- <div class="actions">
                         <form method="GET" action="" class="form-actions">
@@ -31,9 +32,9 @@
                         </form>
                     </div> -->
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered ">
+                            <table class="table list-table-wp ">
 
-                                <thead class="thead-dark text-center">
+                                <thead class=" text-center">
 
                                     <tr>
                                         <th>#</th>
@@ -78,20 +79,15 @@
                                                     </a>
                                                 </div>
                                                 <ul class="list-operation fl-right ">
-                                                    <li><a href="?mod=product&action=resProduct&id=<?= $item['product_id'] ?>"
-                                                            title="Khôi phục" class="delete"><i class="fa fa-refresh"
-                                                                aria-hidden="true"></i></a></li>
-                                                    <li><a href="?mod=product&action=delProduct&id=<?= $item['product_id'] ?>"
-                                                            title="Xóa" class="delete"><i class="fa fa-trash"
-                                                                aria-hidden="true"></i></a></li>
+                                                    <li><a href="?mod=product&action=resProduct&id=<?= $item['product_id'] ?>" title="Khôi phục" class="delete"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+                                                    <li><a href="?mod=product&action=delProduct&id=<?= $item['product_id'] ?>" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
 
                                                 </ul>
                                             </td>
                                             <td>
                                                 <span class="tbody-thumb mt-1  text-center ">
 
-                                                    <img class="" width="100px" height="auto"
-                                                        src="public/images/<?= $item['product_image'] ?>" alt="">
+                                                    <img class="" width="100px" height="auto" src="public/images/<?= $item['product_image'] ?>" alt="">
                                                 </span>
                                             </td>
                                             <td>
@@ -131,8 +127,8 @@
                                                 </div>
                                             </td>
 
-                                        </tr>
-                                    <?php } ?>
+                                    </tr>
+                                <?php } ?>
 
                                 </tbody>
                             </table>
@@ -143,14 +139,13 @@
                 <div class="section" id="paging-wp">
                     <div class="section-detail clearfix">
                         <p id="desc" class="fl-left">
-                        <ul class="post-status fl-left">
-                            <li class="all"><a href="">Tất cả <span class="count">(
+                        <ul class="post-status fl-left mt-2">
+                            <li class="all btn bg-danger"><a class="text-white" href="">Tất cả <span class="count text-white">(
                                         <?= $stt ?>)
-                                    </span></a> |</li>
+                                    </span></a></li>
                             <!-- <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
                         <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li> -->
-                            <li class="pending"><a href="?mod=product&action=index">Trang trước<span
-                                        class="count"></span></a></li>
+                            <li class="pending btn bg-danger"><a class="text-white" href="?mod=product&action=index">Trang trước<span class="count text-white"></span></a></li>
                         </ul>
                         </p>
                         <ul id="list-paging" class="fl-right">
@@ -173,7 +168,7 @@
                         </ul>
                     </div>
                 </div>
-                <?php
+            <?php
             } else { ?>
                 <div class=" col-md-12 text-center ">
                     <img src="public/images/trash.jpg" alt="" class="w-50 h-50 m-auto">

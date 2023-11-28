@@ -46,18 +46,24 @@ get_header();
                             </select>
                         </div>
 
-                        <div class="col-md-12">
-                            <div class="col-md-12"><label>Hình ảnh</label>
-                                <div id="uploadFile">
-                                    <img src="public/images/noimage.jpg" id="img" height="300px" class="w-25">
-                                    <input class="d-none" type="file" name="post_image" id="upload">
-                                    <label for="upload" class="w-25 bg-dark text-light text-center h-50">
-                                        <i class="fa-solid fa-upload"></i>
-                                    </label>
-                                </div>
+
+                        <div class="col-md-12"><label>Hình ảnh</label>
+                            <div id="uploadFile">
+                                <img src="public/images/noimage.jpg" id="img" height="300px" class="w-25">
+                                <input class="d-none" type="file" name="post_image" id="upload">
+                                <label for="upload" class="w-25 bg-dark text-light text-center h-50">
+                                    <i class="fa-solid fa-upload"></i>
+                                </label>
                             </div>
                         </div>
 
+                        <div class="col-md-12">
+                            <label for="post_title">Nội dung</label>
+                            <textarea class="w-100 form-control" type="text" name="post_content" id="post_content"></textarea>
+                            <div class="error">
+                                <?php echo form_error('post_content') ?>
+                            </div>
+                        </div>
                         <div class="ml-3 mt-2">
                             <button class="btn btn-danger" type="submit" name="btn-edit" id="btn-submit">Cập nhật</button>
                         </div>

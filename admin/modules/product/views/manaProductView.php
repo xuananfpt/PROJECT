@@ -20,8 +20,8 @@
 
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered ">
-                            <thead class="thead-dark text-center">
+                        <table class="table list-table-wp ">
+                            <thead class=" text-center">
                                 <tr>
                                     <th>#</th>
                                     <th>STT</th>
@@ -68,7 +68,7 @@
                                         <td>
                                             <div class="tbody-text  text-center">
 
-                                                <a href="?mod=product&action=detailCat&product_cat=<?= $item['cat_id'] ?>" class="btn">Xem chi tiết</a>
+                                                <a href="?mod=product&action=detailCat&product_cat=<?= $item['cat_id'] ?>" class="btn bg-danger text-white">Xem chi tiết</a>
                                             </div>
                                         </td>
                                 </tr>
@@ -82,11 +82,11 @@
             <div class="section" id="paging-wp">
                 <div class="section-detail clearfix">
                     <p id="desc" class="fl-left">
-                    <ul class="post-status fl-left">
-                        <li class="all"><a href="">Tất cả <span class="count">(<?= $stt ?>)</span></a> |</li>
+                    <ul class="post-status fl-left mt-2">
+                        <li class="all btn bg-danger"><a class="text-white" href="">Tất cả <span class="count text-white">(<?= $stt ?>)</span></a></li>
                         <!-- <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
                         <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li> -->
-                        <li class="pending"><a href="?mod=product&action=trashProduct">Thùng rác<span class="count"></span></a></li>
+                        <li class="pending btn bg-danger"><a class="text-white" href="?mod=product&action=trashProduct">Thùng rác<span class="count text-white"></span></a></li>
                     </ul>
                     </p>
                     <ul id="list-paging" class="fl-right">

@@ -80,8 +80,13 @@ function addProductAction()
 
         //Lấy dữ liệu
         $get_image = get_list_products();
+
         // // show_array($get_image);
         // //kiểu dữ liệu trả về mảng 2 chiều, lấy phần tử đầu tiên là 0
+
+        // show_array($get_image);
+        //kiểu dữ liệu trả về mảng 2 chiều, lấy phần tử đầu tiên là 0
+
         $id_pros = $get_image[0]['product_id'];
 
         $id_pro = $id_pros + 1;

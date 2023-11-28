@@ -41,6 +41,7 @@ get_header();
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">Hình ảnh</span></td>
                                     <td><span class="thead-text">Tiêu đề</span></td>
+                                    <td><span class="thead-text">Nội dung</span></td>
                                     <td><span class="thead-text">Danh mục</span></td>
                                     <td><span class="thead-text">Trạng thái</span></td>
                                     <td><span class="thead-text">Người tạo</span></td>
@@ -73,6 +74,8 @@ get_header();
                                                     <li><a href="?mod=post&action=delPostsoft&id=<?php echo $item['post_id'] ?>" title="Xóa mềm" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
                                                 </ul>
                                             </td>
+
+                                            <td><span class="tbody-text"><?php echo $item['post_content'] ?></span></td>
                                             <td><span class="tbody-text"><?php echo $item['cat_post'] ?></span></td>
                                             <td><span class="tbody-text"><?php echo $item['post_status'] ?></span></td>
                                             <td><span class="tbody-text"><?php echo $item['post_creator'] ?></span></td>
@@ -169,6 +172,7 @@ get_header();
                                     <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="tfoot-text">STT</span></td>
                                     <td><span class="tfoot-text">Tiêu đề</span></td>
+                                    <td><span class="tfoot-text">Nội dung</span></td>
                                     <td><span class="tfoot-text">Danh mục</span></td>
                                     <td><span class="tfoot-text">Trạng thái</span></td>
                                     <td><span class="tfoot-text">Người tạo</span></td>
@@ -183,10 +187,10 @@ get_header();
             <div class="section" id="paging-wp">
                 <div class="section-detail clearfix">
                     <ul class="post-status fl-left">
-                        <li class="all"><a href="">Tất cả <span class="count">(<?= $i ?>)</span></a> |</li>
+                        <li class="all btn bg-danger"><a class="text-white" href="">Tất cả <span class="count text-white">(<?= $i ?>)</span></a></li>
                         <!-- <li class="publish"><a href="">Đã đăng <span class="count">(5)</span></a> |</li>
                             <li class="pending"><a href="">Chờ xét duyệt <span class="count">(5)</span> |</a></li> -->
-                        <li class="trash"><a href="?mod=post&action=trashPost">Thùng rác <span class="count">(0)</span></a></li>
+                        <li class="trash btn bg-danger"><a class="text-white" href="?mod=post&action=trashPost">Thùng rác <span class="count text-white">(0)</span></a></li>
                     </ul>
                     <ul id="list-paging" class="fl-right">
                         <li>
