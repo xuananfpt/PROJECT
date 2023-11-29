@@ -49,6 +49,11 @@ function addProductAction()
         } else {
             $product_price = $_POST['product_price'];
         }
+        if (empty($_POST['product_discount'])) {
+            $error['product_discount'] = "Vui lòng nhập";
+        } else {
+            $product_discount = $_POST['product_discount'];
+        }
         if (empty($_POST['product_desc'])) {
             $error['product_desc'] = "Vui lòng nhập";
         } else {
@@ -97,6 +102,7 @@ function addProductAction()
                 'product_code' => $product_code,
                 'product_name' => $product_name,
                 'product_price' => $product_price,
+                'product_discount' => $product_discount,
                 'product_desc' => $product_desc,
                 'product_detail' => $product_detail,
                 'product_cat' => $product_cat,
@@ -136,6 +142,7 @@ function editProductAction()
         $product_code = $_POST['product_code'];
         $product_name = $_POST['product_name'];
         $product_price = $_POST['product_price'];
+        $product_discount = $_POST['product_discount'];
         $product_desc = $_POST['product_desc'];
         $product_detail = $_POST['product_detail'];
         $product_cat = $_POST['parent_id'];
@@ -156,6 +163,7 @@ function editProductAction()
             'product_code' => $product_code,
             'product_name' => $product_name,
             'product_price' => $product_price,
+            'product_discount' => $product_discount,
             'product_desc' => $product_desc,
             'product_detail' => $product_detail,
             'product_cat' => $product_cat,

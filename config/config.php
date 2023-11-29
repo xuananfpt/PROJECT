@@ -12,7 +12,7 @@ ob_start();
  * 
  */
 
-$config['base_url'] = "http://localhost/unitop/back-end/project/ismart.com/";
+$config['base_url'] = "http://localhost/project/";
 //Điều hướng trước kia mod act ....
 //Điều hướng chuyên nghiệp hơn ... muốn đi vào mặc đi thì cần khai báo mặc định là được
 
