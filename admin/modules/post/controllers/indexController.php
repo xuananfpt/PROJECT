@@ -57,6 +57,12 @@ function addPostAction()
         } else {
             $post_content = $_POST['post_content'];
         }
+
+        if (empty($_POST['short_content'])) {
+            $error['short_content'] = "Không được để trông trường này";
+        } else {
+            $short_content = $_POST['short_content'];
+        }
         //status
         if (empty($_POST['post_status'])) {
             $error['post_status'] = "Không được để trông trường này";
@@ -91,6 +97,7 @@ function addPostAction()
             $data = array(
                 'post_title' => $post_title,
                 'post_content' => $post_content,
+                'short_content' => $short_content,
                 'post_status' => $post_status,
                 'post_creator' => $post_creator,
                 'cat_post' => $cat_post,
@@ -103,7 +110,7 @@ function addPostAction()
     }
     load_view('addPost');
 }
-function deletePostAction()
+function delPostAction()
 {
     $id = $_GET['id'];
     // echo $idPage;
@@ -131,6 +138,8 @@ function editPostAction()
 
         $post_content = $_POST['post_content'];
 
+        $short_content = $_POST['short_content'];
+
         $post_status = $_POST['post_status'];
 
         $post_creator = $_POST['post_creator'];
@@ -146,12 +155,13 @@ function editPostAction()
             $post_image = $list_post['cat_image'];
         } else {
             $post_image = $_FILES['post_image']['name'];
-            move_uploaded_file($_FILES['post_image']['tmp'], $target_file);
+            move_uploaded_file($_FILES['post_image']['tmp_name'], $target_file);
         }
         // show_array($_POST);
         $data = array(
             'post_title' => $post_title,
             'post_content' => $post_content,
+            'short_content' => $short_content,
             'post_status' => $post_status,
             'post_creator' => $post_creator,
             'cat_post' => $cat_post,

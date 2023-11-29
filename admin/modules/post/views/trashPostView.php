@@ -186,7 +186,7 @@ get_header();
                         <li class="all btn bg-danger"><a class="text-white" href="?mod=post&action=listPost">Trang trước <span class="count text-white"></span></a></li>
                         <!-- <li class="publish"><a href="">Đã đăng <span class="count">(5)</span></a> |</li>
                             <li class="pending"><a href="">Chờ xét duyệt <span class="count">(5)</span> |</a></li> -->
-                        <li class="trash btn bg-danger"><a href="?mod=post&action=trashPost">Thùng rác <span class="count text-white"><?= $i ?></span></a></li>
+                        <li class="trash btn bg-danger"><a class="text-white" href="?mod=post&action=trashPost">Thùng rác <span class="count text-white">(<?= $i ?>)</span></a></li>
                     </ul>
                     <ul id="list-paging" class="fl-right">
                         <li>

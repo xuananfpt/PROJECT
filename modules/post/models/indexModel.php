@@ -1,11 +1,12 @@
 <?php
 
-function get_list_users() {
-    $result = db_fetch_array("SELECT * FROM `tbl_users_byan`");
-    return $result;
+function get_list_post()
+{
+    $list_post = db_fetch_array("SELECT * FROM tbl_post where post_status='Hoạt động' ");
+    return $list_post;
 }
-
-function get_user_by_id($id) {
-    $item = db_fetch_row("SELECT * FROM `tbl_users_byan` WHERE `user_id` = {$id}");
-    return $item;
+function get_post_by_id($id)
+{
+    $list_post = db_fetch_array("SELECT * FROM tbl_post where post_status='Hoạt động' and post_id='$id' ");
+    return $list_post;
 }
