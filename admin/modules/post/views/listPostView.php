@@ -75,7 +75,7 @@ get_header();
                                                 </ul>
                                             </td>
 
-                                            <td><span class="tbody-text"><?php echo $item['post_content'] ?></span></td>
+                                            <td><span class="tbody-text"><?php echo $item['short_content'] ?></span></td>
                                             <td><span class="tbody-text"><?php echo $item['cat_post'] ?></span></td>
                                             <td><span class="tbody-text"><?php echo $item['post_status'] ?></span></td>
                                             <td><span class="tbody-text"><?php echo $item['post_creator'] ?></span></td>
@@ -190,7 +190,7 @@ get_header();
                         <li class="all btn bg-danger"><a class="text-white" href="">Tất cả <span class="count text-white">(<?= $i ?>)</span></a></li>
                         <!-- <li class="publish"><a href="">Đã đăng <span class="count">(5)</span></a> |</li>
                             <li class="pending"><a href="">Chờ xét duyệt <span class="count">(5)</span> |</a></li> -->
-                        <li class="trash btn bg-danger"><a class="text-white" href="?mod=post&action=trashPost">Thùng rác <span class="count text-white">(0)</span></a></li>
+                        <li class="trash btn bg-danger"><a class="text-white" href="?mod=post&action=trashPost">Thùng rác <span class="count text-white"></span></a></li>
                     </ul>
                     <ul id="list-paging" class="fl-right">
                         <li>

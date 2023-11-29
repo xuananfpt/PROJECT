@@ -59,9 +59,16 @@ get_header();
 
                         <div class="col-md-12">
                             <label for="post_title">Nội dung</label>
-                            <textarea class="w-100 form-control" type="text" name="post_content" id="post_content"></textarea>
+                            <textarea class="w-100 form-control" type="text" name="post_content" id="post_content"><?php echo $post_item['post_content'] ?></textarea>
                             <div class="error">
                                 <?php echo form_error('post_content') ?>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="post_title">Nội dung ngắn</label>
+                            <textarea class="w-100 form-control" type="text" name="short_content" id="short_content"><?php echo $post_item['short_content'] ?></textarea>
+                            <div class="error">
+                                <?php echo form_error('short_content') ?>
                             </div>
                         </div>
                         <div class="ml-3 mt-2">
@@ -73,6 +80,16 @@ get_header();
         </div>
     </div>
 </div>
+<script>
+    let img = document.getElementById("img");
+    let upload = document.getElementById("upload");
+
+    upload.onchange = (e) => {
+        if (upload.files[0]) {
+            img.src = URL.createObjectURL(upload.files[0]);
+        }
+    };
+</script>
 <?php
 get_footer();
 ?>

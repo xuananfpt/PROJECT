@@ -79,6 +79,13 @@ get_header();
                                 <?php echo form_error('post_content') ?>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <label for="post_title">Nội dung ngắn:</label>
+                            <textarea class="w-100 form-control" type="text" name="short_content" id="short_content"></textarea>
+                            <div class="error">
+                                <?php echo form_error('short_content') ?>
+                            </div>
+                        </div>
 
                         <div class="ml-3 mt-2">
                             <button type="submit" name="btn-add-post" class="btn btn-danger" id="btn-submit">Thêm mới</button>

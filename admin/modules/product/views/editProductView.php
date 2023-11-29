@@ -25,6 +25,14 @@ get_header()
                             <label for="price">Giá sản phẩm</label>
                             <input class="w-100 form-control" type="text" name="product_price" id="price" value="<?= $get_product['product_price'] ?>">
                         </div>
+                        <div class="col-md-3">
+                            <label for="price">Giảm giá</label>
+                            <input class="w-100 form-control" type="text" name="product_discount" id="discount" value="<?= $get_product['product_discount'] ?>">
+                        </div>
+                        <div class="col-md-3">
+                            <label>Số Lượng</label>
+                            <input class="w-100 form-control" type="number" min=0 name="product_quantity" value="<?= $get_product['product_quantity'] ?>">
+                        </div>
                         <!-- <div class="col-md-4">
                             <label>Danh mục sản phẩm</label>
                             <select class="w-100 form-control" name=" parent_id">
@@ -34,7 +42,7 @@ get_header()
                                 <option value="Máy tính bảng" <?php if ($get_product["product_cat"] == 'Máy tính bảng') echo 'selected' ?>>Máy tính bảng</option>
                             </select>
                         </div> -->
-                        <div class="col-md-4"><label>Danh mục sản phẩm</label>
+                        <div class="col-md-3"><label>Danh mục sản phẩm</label>
                             <select class="w-100 form-control" name="parent_id">
                                 <option value="0">-- Chọn danh mục --</option>
                                 <?php
@@ -54,11 +62,8 @@ get_header()
                             </select>
 
                         </div>
-                        <div class="col-md-4">
-                            <label>Số Lượng</label>
-                            <input class="w-100 form-control" type="number" min=0 name="product_quantity" value="<?= $get_product['product_quantity'] ?>">
-                        </div>
-                        <div class="col-md-4">
+                        
+                        <div class="col-md-3">
                             <label for="create_time">Thời gian</label>
                             <input class="w-100 form-control" type="date" name="create_time" id="create_time" value="<?= $get_product['create_time'] ?>">
                         </div>
@@ -93,8 +98,8 @@ get_header()
                         </div>
 
 
-                        <div class="mt-2">
-                            <button class="btn " type="submit" name="btn-submit" id="btn-submit">Cập nhật</button>
+                        <div class="mt-2 ml-3">
+                            <button class="btn bg-danger text-white " type="submit" name="btn-submit" id="btn-submit">Cập nhật</button>
                         </div>
                     </form>
                 </div>

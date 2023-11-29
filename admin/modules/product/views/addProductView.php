@@ -27,8 +27,16 @@ get_header()
                             <input class="w-100 form-control" type="text" name="product_price" id="price">
                             <span><?php echo form_error('product_price') ?></span>
                         </div>
-
-                        <div class="col-md-4"><label>Danh mục sản phẩm</label>
+                        <div class="col-md-3"><label for="price">Giảm giá</label>
+                            <input class="w-100 form-control" type="text" name="product_discount" id="price">
+                            <span><?php echo form_error('product_discount') ?></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Số lượng</label>
+                            <input class="w-100 form-control" type="number" min=0 name="product_quantity" id="quantity">
+                            <span><?php echo form_error('product_quantity') ?></span>
+                        </div>
+                        <div class="col-md-3"><label>Danh mục sản phẩm</label>
                             <select class="w-100 form-control" name="parent_id">
                                 <option value="0">-- Chọn danh mục --</option>
                                 <?php
@@ -45,12 +53,8 @@ get_header()
                                 <option value="Máy Tính Bảng">Máy Tính Bảng</option>
                             </select> -->
                         </div>
-                        <div class="col-md-4">
-                            <label>Số lượng</label>
-                            <input class="w-100 form-control" type="number" min=0 name="product_quantity" id="quantity">
-                            <span><?php echo form_error('product_quantity') ?></span>
-                        </div>
-                        <div class="col-md-4"><label for="create_time">Thời gian</label>
+                      
+                        <div class="col-md-3"><label for="create_time">Thời gian</label>
                             <input class="w-100 form-control" type="date" name="create_time" id="create_time">
                             <span><?php echo form_error('create_time') ?></span>
                         </div>
