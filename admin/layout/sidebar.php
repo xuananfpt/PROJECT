@@ -98,8 +98,8 @@
                 <span class="title">Lợi nhuận</span>
             </a>
             <ul class="sub-menu">
-                <li class="nav-item">=
-                    <a href="?page=list_widget" title="" class="nav-link">Tổng lợi nhuận</a>
+                <li class="nav-item">
+                    <a href="?mod=profit&action=index" title="" class="nav-link">Tổng lợi nhuận</a>
                 </li>
             </ul>
         </li>

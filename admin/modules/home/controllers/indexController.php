@@ -1,14 +1,15 @@
 <?php
 //đường url ví dụ như: http://localhost/unitop/back-end/lession/section-26/projectmvc.vn/?mod=users&controller=index&action=add
 function construct() {
-  
 
+    load_model("index");
 }
-// //Đặt tên đúng cách
 function indexAction() {
-    load_view('index');
+   $chart_cicrle = get_chart_by_category();
+    // show_array($chart_cicrle);
+    $data['chart_cicrle'] = $chart_cicrle;
+    load_view('index',$data);
 }
-// //Đi vào bên trong ACT
 function addAction() { 
 
 }

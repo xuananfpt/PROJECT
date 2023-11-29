@@ -109,7 +109,7 @@ get_header();
                         </div>
                         <div class="col-md-3 p-4">
                             <div class="card mb-3 p-3 admin_role">
-                                <a href="?page=list_order" class="text-dark">
+                                <a href="?mod=cart&action=index" class="text-dark">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
                                             <img src="public/images/cart_pr.jpg" class="card-img mt-3" alt="">
@@ -149,32 +149,36 @@ get_header();
 
             <div class="row">
                 <div class="col-md-6 admin_chart">
+                    <div id="piechart_3dd" style="width: 700px; height: 500px;"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
-                        google.charts.load("current", { packages: ["corechart"] });
+                        google.charts.load('current', {
+                            'packages': ['corechart']
+                        });
                         google.charts.setOnLoadCallback(drawChart);
+
                         function drawChart() {
-                            var data = google.visualization.arrayToDataTable([
-                                ['Task', 'Hours per Day'],
-                                ['Work', 11],
-                                ['Eat', 2],
-                                ['Commute', 2],
-                                ['Watch TV', 2],
-                                ['Sleep', 7]
+                            const data = google.visualization.arrayToDataTable([
+                                ['Tên sản phẩm', 'Số lượng bình luận'],
+                                <?php
+                                // print_r($list_bl);
+                                foreach ($chart_cicrle as $chart) {
+                                    extract($chart);
+                                    echo "['$cat_name', $soluongsanpham],";
+                                }
+                                ?>
                             ]);
-
-                            var options = {
-                                title: 'My Daily Activities',
+                            // Set Options
+                            const options = {
+                                title: 'BIỂU ĐỒ THỐNG KÊ BÌNH LUẬN THEO SẢN PHẨM',
                                 is3D: true,
+                                colors: ['#ff0000', '#00ff00', '#0000ff']
                             };
-
-                            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                            // Draw
+                            const chart = new google.visualization.PieChart(document.getElementById('piechart_3dd'));
                             chart.draw(data, options);
                         }
-
-
                     </script>
-                    <div id="piechart_3d" style="width: 80%; height: 500px;"></div>
                 </div>
                 <div class="col-md-6 admin_chart">
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
