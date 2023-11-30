@@ -5,7 +5,7 @@
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix text-center">
-                    <h3 id="index" class="fl-left">Danh sách đơn hàng</h3>
+                    <h3 id="index" class="fl-left">Danh sách khách hàng</h3>
                     <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>
                 </div>
             </div>
@@ -91,3 +91,4 @@
     </div>
 </div>
 <?php get_footer() ?>
+
