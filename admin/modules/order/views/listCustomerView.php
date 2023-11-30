@@ -1,4 +1,13 @@
 <?php get_header() ?>
+<style>
+    table tr td div {
+        margin-top: 30px;
+    }
+
+    span {
+        display: inline-block;
+    }
+</style>
 
 <div id="main-content-wp" class="list-product-page">
     <div class="wrap clearfix">
@@ -167,4 +176,4 @@
         </div>
     </div>
 </div>
-        <?php get_footer() ?>
+<?php get_footer() ?>
