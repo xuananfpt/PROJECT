@@ -7,25 +7,21 @@ function construct()
 // //Đặt tên đúng cách
 function indexAction()
 {
-    $list_phone_cat = get_list_product_cat_phone();
-    $list_laptop_cat = get_list_product_cat_laptop();
-    $list_product = array(
-        '1' => $list_phone_cat,
-        '2' => $list_laptop_cat,
-    );
-    $data['list_product'] = $list_product;
-    load_view('index', $data);
+
+    load_view('index');
 }
-// //Đi vào bên trong ACT
 
 function detailProductAction()
 {
     $id = $_GET['id'];
     $get_product = get_product_by_id($id);
     $data['get_product'] = $get_product;
+
+    $get_image = get_image_product($id);
+    // show_array($get_image);
+    $data['get_image'] = $get_image;
     load_view('detailProduct', $data);
 }
-
 function editAction()
 {
 }

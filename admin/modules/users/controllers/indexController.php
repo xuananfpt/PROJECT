@@ -64,6 +64,56 @@ function loginAction()
     }
     load_view('login');
 }
+
+function registerAction()
+{
+    // Lấy được ngày tháng năm
+    // echo time();
+    // echo date("d/m/Y h:m:s");
+    //LẤy được một chuỗi -? insert database
+    // global $error, $username, $password;
+    // if (isset($_POST['btn-login'])) {
+    //     $error = array();
+    //     #kiểm tra username
+    //     if (empty($_POST['username'])) {
+    //         $error['username'] = "Không được để trống trường username";
+    //     } else {
+    //         if (!is_username($_POST['username'])) {
+    //             $error['username'] = "Tên đăng nhập không đúng định dạng";
+    //         } else {
+    //             $username = $_POST['username'];
+    //         }
+    //     }
+    //     #Kiểm tra password
+    //     if (empty($_POST['password'])) {
+    //         $error['password'] = "Không được để trống trường password";
+    //     } else {
+    //         if (!is_password($_POST['password'])) {
+    //             $error['password'] = "Pass không đúng định dạng";
+    //         } else {
+    //             $password = md5($_POST['password']);
+    //         }
+    //     }
+    //     #Kết luận
+    //     if (empty($error)) { {
+    //             if (check_login($username, $password)) {
+
+    //                 // Lưu trữ phiên đăng nhập
+    //                 $_SESSION['is_login'] = true;
+    //                 $_SESSION['user_login'] = $username;
+    //                 $user = get_user($_SESSION['user_login']);
+    //                 //Lấy ra ảnh của user
+    //                 $_SESSION['image_user'] = $user['user_image'];
+    //                 //Chuỷen hướng vào trong hệ thống
+    //                 redirect("?mod=home&action=index");
+    //             } else {
+    //                 $error['account'] = "Tên đăng nhập hoặc mật khẩu không tồn tại";
+    //             }
+    //         }
+    //     }
+    // }
+    load_view('register');
+}
 // //Đi vào bên trong ACT
 
 function logoutAction()
