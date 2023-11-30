@@ -15,5 +15,10 @@ function chartAction() {
     $list_profit_chart = get_list_profit();
     // show_array($list_profit_chart);
     $data['list_profit_chart'] = $list_profit_chart;
+    // show_array($list_profit_chart);
     load_view("chart",$data);
+}
+
+function detailOrderAction() {
+    load_view('detailOrder');
 }

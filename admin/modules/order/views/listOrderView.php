@@ -69,7 +69,7 @@
                                     <td><span class="tbody-text">1.500.000 VNĐ</span></td>
                                     <td><span class="tbody-text">Hoạt động</span></td>
                                     <td><span class="tbody-text">12-07-2016</span></td>
-                                    <td><a href="?page=detail_order" title="" class="tbody-text">Chi tiết</a></td>
+                                    <td><a href="?mod=order&action=listOrder" title="" class="tbody-text">Chi tiết</a></td>
                                 </tr>
                             </tbody>
                             <tfoot>

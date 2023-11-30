@@ -12,13 +12,32 @@ function indexAction() {
 }
 
 function detailCartAction() {
+    //id của order
     $id = $_GET['id'];
-    $list_product = get_list_product_cart($id);
-    // show_array($list_product);
-    $data['list_product'] = $list_product;
+    // echo $id;
+    $list_detail_product = get_detail_product($id);
+    $customer = get_customer_by_id($id);
+    $option = get_all_status();
+    // show_array($option);
+    if(isset($_POST['btn_update'])) {
+        $id = $_GET['id'];
+        $id_status = $_POST['option_status'];
+        // echo $id_status;
+        // echo $id;
+        
+        $data_update = array(
+            'id_status' => $id_status
+        );
+        update_status($data_update ,$id);
+       
+    }
+    $status = get_status_by_id($id);
+    $data = array(
+        'list_detail_product' => $list_detail_product,
+        'customer' => $customer,
+        'option' => $option,
+        'status' => $status
+    );
     load_view('detailCart', $data);
 }
 
-function editAction() {
-  
-}

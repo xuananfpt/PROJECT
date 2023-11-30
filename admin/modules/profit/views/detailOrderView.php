@@ -4,57 +4,39 @@
         <?php get_sidebar() ?>
         <div id="content" class="fl-right">
             <div class="row p-4 w-100">
-                <div class="w-100 row text-center d-flex justify-content-between">
-                    <h5 class=" fw-bold py-1 text-center bg-danger rounded text-white px-5">QUẢN LÝ ĐƠN HÀNG</h5>
+                <div class="w-100 ml-1 row text-center d-flex justify-content-between">
+                    <h5 class="fs-4 fw-bold bg-danger p-2 rounded">QUẢN LÝ ĐƠN HÀNG</h5>
                 </div>
                 <div class="row w-100">
-                    <div class="col-md-7 rounded border-col p-3">
+                    <div class="col-md-8 rounded border-col p-3">
                         <table class="text-center w-100">
-                            <thead class="text-center bg-dark text-light rounded w-100">
+                            <thead class="text-center bg-dark text-light">
                                 <tr>
                                     <th class="fs-6 py-2 ps-4">STT</th>
                                     <th class="fs-6">Tên sản phẩm</th>
                                     <th class="fs-6">Hình ảnh</th>
                                     <th class="fs-6">Giá</th>
                                     <th class="fs-6">Số lượng</th>
-                                    <th class="fs-6">Thành tiền</th>
+                                    <th class="fs-6">Tổng tiền</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $count = 0;
-                                $sumMoney = 0;
-                                foreach ($data['list_detail_product'] as $item) {
-                                    $count++;
-                                    $intoMoney = ($item['quantity'] * $item['product_price']);
-                                    $sumMoney += $intoMoney;
-                                    ?>
-                                    <tr>    
-                                        <td>1</td>
-                                        <td>
-                                            <?php echo $item['product_name'] ?>
-                                        </td>
-                                        <td><img class="rounded mx-auto d-block img-fluid imagedm mt-3" width="100px"
-                                                src="public/images/<?php echo $item['product_image'] ?>" alt="">
-                                        </td>
-                                        <td class="text-danger fw-bold">
-                                            <?php echo currency_format($item['product_price']) ?>
-                                        </td>
-                                        <td class="fw-bold">
-                                            <?php echo $item['quantity'] ?>
-                                        </td>
-                                        <td class="text-danger fw-bold">
-                                            <?php echo currency_format($intoMoney) ?>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                } ?>
 
+                                <tr>
+                                    <td>1</td>
+                                    <td>Xuân An</td>
+                                    <td><img class="rounded mx-auto d-block img-fluid w-75 imagedm mt-3" src="" alt="">
+                                    </td>
+                                    <td class="text-danger fw-bold">200</td>
+                                    <td class="fw-bold">20</td>
+                                    <td class="text-danger fw-bold">Tổng tiền</td>
+                                </tr>
 
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="ml-5 col-md-4 border-col rounded-3 bg-body ms-5 p-3">
+                    <div class="ml-5 col-md-3 border-col rounded-3 bg-body ms-5 p-3">
                         <div class="bg-dark text-center text-light fs-6 fw-bold p-2">
                             THÔNG TIN NGƯỜI MUA
                         </div>
@@ -62,25 +44,25 @@
                             <div class="d-flex px-2 pt-3 ms-2 fst-italic">
                                 <span class="text-danger fw-bold">Họ tên:</span>
                                 <p class="ms-2">
-                                    <?php echo $data['customer']['name_customer'] ?>
+                                    Tên người mua
                                 </p>
                             </div>
                             <div class="d-flex px-2 ms-2 fst-italic">
                                 <span class="text-danger fw-bold">Địa chỉ: </span>
                                 <p class="ms-2">
-                                    <?php echo $data['customer']['address_customer'] ?>
+                                    Địa chỉ người mua
                                 </p>
                             </div>
                             <div class="d-flex px-2 ms-2 fst-italic">
                                 <span class="text-danger fw-bold"> Điện thoại: </span>
                                 <p class="ms-2">
-                                    <?php echo $data['customer']['phone_customer'] ?>
+                                    0978238946
                                 </p>
                             </div>
                             <div class="d-flex px-2 ms-2 fst-italic">
                                 <span class="text-danger fw-bold">Email: </span>
                                 <p class="ms-2">
-                                    <?php echo $data['customer']['email'] ?>
+                                    Email người mua
                                 </p>
                             </div>
                         </div>
@@ -91,7 +73,7 @@
                                         class="fa-solid fa-film me-2 fs-4"></i>Tổng tiền
                                     đơn hàng: </span>
                                 <p class="ms-2 fw-bold pt-3">
-                                    <?php echo currency_format($sumMoney) ?>
+                                    90
                                 </p>
                             </div>
                             <div class="d-flex px-2 ms-2">
@@ -111,7 +93,8 @@
                         <div class="d-flex">
                             <p class="text-danger fw-bold d-flex align-items-center h-25 fs-5">Trạng Thái Đơn
                                 Hàng: </p>
-                            <span class="bg-warning h-25 ml-3 fw-bold text-dark px-2 pb-1 rounded"><i><?php echo $data['status']['name_status'] ?></i></span>
+                            <span class="bg-warning h-25 ml-3 fw-bold text-dark px-2 pb-1 rounded"><i>Đang giao
+                                    hàng</i></span>
                         </div>
                         <div class="mt-3 w-100">
                             <div class="input-group mt-3">
@@ -119,38 +102,15 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><a href="">Trạng thái</a></span>
                                     </div>
-                                    <?php
-                                    // Giả sử bạn có giá trị đã chọn từ một nguồn dữ liệu nào đó
-                                    //Cái này t lấy trên db về
-                                    //Đổ id của bằng tbl_order vào đây để lấy selected
-                                    $selectedValue = $data['status']['id_status']; // Đặt giá trị đã chọn ở đây
-                                    // Lấy y hệt ở db
-                                    $options = array(
-                                        "1" => "Chờ xác nhận",
-                                        "2" => "Chờ lấy hàng",
-                                        "3" => "Chờ giao hàng",
-                                        "4" => "Đã giao",
-                                        "5" => "Đã huỷ",
-                                        "6" => "Đã trả hàng"
-                                    );
-                                    ?>
-
-                                    <form action="" method="POST" class="w-100">
-                                        <select name="option_status" id="" class="custom-select w-100">
-                                        <?php
-                                        // Duyệt qua mảng giá trị và tạo các tùy chọn
-                                        foreach ($options as $value => $label) {
-                                            // Nếu giá trị hiện tại trùng với giá trị đã chọn, thêm thuộc tính "selected"
-                                            $isSelected = ($value == $selectedValue) ? 'selected="selected"' : '';
-                                            echo "<option value=\"$value\" $isSelected>$label</option>";
-                                        }
-                                        ?>
-                                        </select>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">Chọn số lượng</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                    </select>
                                 </div>
-                                <button class="btn btn-danger w-25 fw-bold ms-4" type="submit" name="btn_update">CẬP
+                                <button class="btn btn-danger w-25 fw-bold ms-4" type="submit" name="btn-sunmit">CẬP
                                     NHẬT</button>
-                                </form>
-
                             </div>
                             <!-- <form action="" class="d-flex bg-white" method="POST">
                                 <select class="w-75 mr-5 rounded form-select form-input-select" id="floatingSelect"
@@ -170,4 +130,3 @@
     </div>
 </div>
 <?php get_footer() ?>
-
