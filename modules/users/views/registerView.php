@@ -1,103 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Register</title>
+</head>
+<style>
+    .text-center {
+        text-align: center;
+    }
+</style>
 <?php get_header() ?>
 
 <body>
     <div class="wrapper">
-
         <!-- BODY -->
         <div class="form-login">
             <div class="image-register">
                 <img src="admin/public/images/register.png" alt="" />
             </div>
-            <form action="" method="post" class="form-group-login" enctype="multipart/form-data">
+            <form action="" method="post" class="form-group-login">
                 <div class="title-form">
-                    <h1>ĐĂNG KÝ</h1>
+                    <h2>ĐĂNG KÝ</h2>
                 </div>
                 <div class="form-input">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" name="username" id="username" placeholder="Nhập tên tài khoản" value="<?php echo set_value('username') ?>">
+                    <input type="text" placeholder="Vui lòng nhập họ tên" name="fullname" value="<?php echo set_value("fullname") ?>">
                 </div>
-                <div>
-                    <p class="error">
-                        <?php echo form_error('username') ?>
-                    </p>
+                <div class="error">
+                    <?php echo form_error('fullname') ?>
                 </div>
+                <!-- <br /> -->
                 <div class="form-input">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" name="fullname" id="fullname" placeholder="Nhập họ tên" value="<?php echo set_value('fullname') ?>">
+                    <input type="text" placeholder="Nhập tên user" name="username" value="<?php echo set_value('username') ?>" >
                 </div>
-                <div>
-                    <p class="error">
-                        <?php echo form_error('fullname') ?>
-                    </p>
+                <div class="error">
+                    <?php echo form_error('username') ?>
                 </div>
-                <div class="form-input">
-                    <i class="fa-solid fa-phone"></i>
-                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" value="<?php echo set_value('phone') ?>">
-                </div>
-                <div>
-                    <p class="error">
-                        <?php echo form_error('phone') ?>
-                    </p>
-                </div>
-
+                <!-- <br /> -->
                 <div class="form-input">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="text" name="email" id="email" placeholder="Nhập email" value="<?php echo set_value('email') ?>">
+                    <input type="text" placeholder="Email" name="email" value="<?php echo set_value('email'); ?>" >
                 </div>
-                <div>
-                    <p class="error">
-                        <?php echo form_error('email') ?>
-                    </p>
+                <div class="error">
+                    <?php echo form_error('email') ?>
                 </div>
+                <!-- <br /> -->
                 <div class="form-input">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="text" name="password" id="password" placeholder="Nhập mật khẩu">
+                    <input type="password" placeholder="Nhập mật khẩu" name="password" id="" />
                 </div>
-                <div>
-                    <p class="error">
-                        <?php echo form_error('password') ?>
-                    </p>
+                <div class="error">
+                    <?php echo form_error('password') ?>
                 </div>
-
+              
                 <div class="form-input">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="text" name="password2" id="password2" placeholder="Nhập lại mật khẩu">
+                    <input type="password" placeholder="Nhập lại mật khẩu" name="re_password" id="password" />
                 </div>
-                <div>
-                    <p class="error">
-                        <?php echo form_error('password2') ?>
-                    </p>
-
+                <div class="error">
+                    <?php echo form_error('re_password') ?>
                 </div>
-
-                <!-- <div class="form-input">
-                    <input type="file" name="user_image" id="user_image" ">
-                </div> -->
-                <label for="">Hình ảnh</label>
-                <div id=" uploadFile">
-                    <img src="admin/public/images/noimage.jpg" id="img" height="100px" width="100px" >
-                    <input class="d-none" type="file" name="user_image" id="upload">
-                </div>
-
+                <!-- <div class="show-pass">
+            <input type="checkbox" id="show" />
+            <p>Hiện mật khẩu</p>
+          </div> -->
+                <br />
                 <div class="btn-submit">
-                    <input type="submit" name="btn-reg" id="btn-reg" value="ĐĂNG KÝ">
+                    <input type="submit" name="btn-register" value="ĐĂNG KÝ" />
                 </div>
-                <div class=" help">
+                <div class="error text-center">
+                    <?php echo form_error('acount') ?>
+                </div>
+                <div class="help">
                     <span>Bạn chưa có tài khoản ! Vui lòng <a href="?mod=users&action=login">Đăng Nhập</a></span>
                 </div>
             </form>
         </div>
     </div>
-    <script>
-    let img = document.getElementById("img");
-    let upload = document.getElementById("upload");
-
-    upload.onchange = (e) => {
-        if (upload.files[0]) {
-            img.src = URL.createObjectURL(upload.files[0]);
-        }
-    };
-</script>
+    <!-- <script>
+      var show = (document.getElementById("show").onclick = function () {
+        let password = document.getElementById("password");
+        password.type = password.type == "password" ? "text" : "password";
+      });
+    </script> -->
 </body>
 
 </html>

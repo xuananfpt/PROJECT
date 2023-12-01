@@ -16,6 +16,12 @@ function is_login()
     }
     return false;
 }
+function check_role_user(){
+   if ($_SESSION['role_user'] == 1) {
+        return true;
+    }
+    return false;
+} 
 
 function user_login()
 {

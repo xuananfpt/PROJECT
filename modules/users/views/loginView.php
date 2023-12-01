@@ -1,8 +1,11 @@
 <?php get_header() ?>
-
+<style>
+    .text-center {
+        text-align: center;
+    }
+</style>
 <body>
     <div class="wrapper">
-
         <!-- BODY -->
         <div class="form-login">
             <div class="image-login">
@@ -20,9 +23,7 @@
                     <p class="error">
                         <?php echo form_error('username') ?>
                     </p>
-                    <p class=" error">
-                        <?php echo form_error('account') ?>
-                    </p>
+                    
                 </div>
                 <!-- <input type="text" placeholder="Nhập tài khoản của bạn" name="name" id="" /> -->
 
@@ -36,21 +37,22 @@
                     <p class="error">
                         <?php echo form_error('password') ?>
                     </p>
-                    <p class=" error">
-                        <?php echo form_error('account') ?>
-                    </p>
+                    
                 </div>
                 <div class="show-pass">
                     <input type="checkbox" id="show" />
                     <p>Hiện mật khẩu</p>
                 </div>
                 <div class="forgot-pass">
-                    <a href="">Quên mật khẩu ?</a>
+                    <a href="?mod=users&action=checkEmail">Quên mật khẩu ?</a>
                 </div>
                 <br />
                 <div class="btn-submit">
                     <input type="submit" name="btn-login" id="btn-login" value="ĐĂNG NHẬP"">
-           
+
+                </div>
+                <div class="error text-center">
+                    <?php echo form_error('account'); ?>
                 </div>
                 
                     <div class=" help">
