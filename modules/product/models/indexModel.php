@@ -16,7 +16,13 @@ function product_cat_same($id, $iddm)
     return $item;
 }
 
-function insert_comment($data)
+function get_list_product($keyw)
 {
-    db_insert('tbl_comment', $data);
+
+    if ($keyw != "") {
+        $list_product = db_fetch_array("select * from tbl_product where product_code like '%" . $keyw . "%' or product_name like '%" . $keyw . "%'");
+    } else {
+        $list_product = db_fetch_array("select * from tbl_product where product_status=1");
+    }
+    return $list_product;
 }

@@ -58,8 +58,8 @@
                          </div>
                          <span>Giá bán:</span>
                          <div class="price">
-                             <p class="discount-price"><?= $get_product['product_discount'] ?></p>
-                             <span><?= $get_product['product_price'] ?></span>
+                             <p class="discount-price"><?= currency_format($get_product['product_discount'], 'đ') ?></p>
+                             <span><?= currency_format($get_product['product_price'],'đ') ?></span>
                          </div>
                          <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart">Thêm giỏ hàng</a>
                      </div>
@@ -114,10 +114,10 @@
                                  </div>
                                  <a href="?page=detail_product" title="" class="product-name"><?= $item['product_name'] ?></a>
                                  <div class="price">
-                                     <span class="new"><?= $item['product_discount'] ?></span>
-                                     <span class="old"><?= $item['product_price'] ?></span>
+                                    <span class="new"><?= currency_format($item['product_discount'], 'đ')  ?></span>
+                                    <span class="old"><?= currency_format($item['product_price'], 'đ') ?></span>
 
-                                 </div>
+                                </div>
                                  <div class="action clearfix">
                                      <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
                                      <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
