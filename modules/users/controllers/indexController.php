@@ -178,10 +178,10 @@ function logoutAction()
 {
     unset($_SESSION['login']);
     unset($_SESSION['is_login']);
+    unset($_SESSION['login']);
     unset($_SESSION['user_login']);
     unset($_SESSION['image_user']);
     unset($_SESSION['role_user']);
-
     redirect("?mod=users&action=login");
 }
 
