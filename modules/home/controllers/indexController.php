@@ -13,6 +13,7 @@ function indexAction()
         '1' => $list_phone_cat,
         '2' => $list_laptop_cat,
     );
+    // show_array($_SESSION['login']);
     $data['list_product'] = $list_product;
     load_view('index', $data);
 }
