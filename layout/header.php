@@ -38,14 +38,18 @@
                                 <li>
                                     <a href="?mod=product&action=index" title="">Sản phẩm</a>
                                 </li>
-                                <li>
-                                    <a href="?mod=post&action=index" title="">Blog</a>
-                                </li>
+                               
                                 <li>
                                     <a href="?page=detail_blog" title="">Giới thiệu</a>
                                 </li>
-                                <li>
-                                    <a href="?page=detail_blog" title="">Liên hệ</a>
+                             
+                                 <li>
+                                    <a href="?mod=users&action=login" title="">Đăng nhập</a>
+                                    
+                                </li>
+                                 <li>
+                                    <a href="?mod=users&action=register" title="">Đăng kí</a>
+                                    
                                 </li>
                             </ul>
                         </div>
