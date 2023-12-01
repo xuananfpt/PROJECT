@@ -1,18 +1,45 @@
 <?php
-
-// function check_reset_token($reset_token)
-// {
-//     $check_reset = db_num_rows("SELECT * FROM tbl_users WHERE `reset_token` = '$reset_token'");
-//     if ($check_reset > 0) {
-//         return true;
-//     }
-//     return false;
-// }
+function update_pass_user_login($data, $username)
+{
+    db_update('tbl_users', $data, "username = '$username'");
+}
+function check_pass_old($pass_old)
+{
+    $check_email = db_num_rows("SELECT * FROM tbl_users WHERE `password` = '$pass_old'");
+    if ($check_email > 0) {
+        return true;
+    }
+    return false;
+}
+function update_user_login($username, $data)
+{
+    db_update('tbl_users', $data, "username = '$username'");
+}
+function get_user_by_username($username)
+{
+    $item = db_fetch_row("SELECT * FROM `tbl_users` WHERE `username` = '$username'");
+    if (!empty($item)) {
+        return $item;
+    }
+}
+//Cập nhật mật khẩu lại lên database nè....
+function update_pass($data, $reset_token)
+{
+    db_update('tbl_users', $data, "reset_token = '$reset_token'");
+}
+function check_reset_token($reset_token)
+{
+    $check_reset = db_num_rows("SELECT * FROM tbl_users WHERE `reset_token` = '$reset_token'");
+    if ($check_reset > 0) {
+        return true;
+    }
+    return false;
+}
 function update_reset_token($data, $email)
 {
     db_update('tbl_users', $data, "`email` ='{$email}'");
 }
-// Kiểm tra tồn tại trên hệ thống hay không
+//Kiểm tra tồn tại trên hệ thống hay không
 function check_email($email)
 {
     $check_email = db_num_rows("SELECT * FROM tbl_users WHERE `email` = '$email'");
@@ -21,48 +48,69 @@ function check_email($email)
     }
     return false;
 }
-function add_user($data)
+
+function check_user_exits($username, $email)
 {
-    //Cho vào bảng vào và dữ liệu là gì
-    db_insert('tbl_users', $data);
-}
-function user_exists($username, $email)
-{
-    $check_user = db_num_rows("SELECT * FROM tbl_users WHERE email = '$email' OR username = '$username' ");
-    // echo $check_user;
-    if (empty($check_user)) {
+    $check_user = db_num_rows("SELECT * FROM tbl_users WHERE email = '$email' OR username = '$username'");
+    echo $check_user;
+    if ($check_user > 0) {
         return true;
     }
     return false;
 }
-function get_list_users()
+// function get_list_users() {
+//     $result = db_fetch_array("SELECT * FROM `tbl_users`");
+//     return $result;
+// }
+
+// function get_user_by_id($id) {
+//     $item = db_fetch_row("SELECT * FROM `tbl_users` WHERE `user_id` = {$id}");
+//     return $item;
+// }
+
+
+function check_login($username, $password)
 {
-    $result = db_fetch_array("SELECT * FROM `tbl_users`");
-    return $result;
+    $check_user = db_num_rows("SELECT * FROM tbl_users WHERE username = '$username' AND password = '$password'");
+    if ($check_user > 0) {
+        return true;
+    }
+    return false;
 }
 
-function get_user_by_id($id)
+function get_user($username)
 {
-    $item = db_fetch_row("SELECT * FROM `tbl_users` WHERE `user_id` = {$id}");
-    return $item;
+    $user_image = db_fetch_row("SELECT * FROM tbl_users WHERE username = '$username'");
+    return $user_image;
 }
-function active_users($active_token)
+function get_role($username)
 {
-    return db_update('tbl_users', array('is_active' => 1), "`active_token` ='{$active_token}'");
+    $role_user = db_fetch_row("SELECT `role` FROM tbl_users WHERE username = '$username'");
+    return $role_user;
+}
+function get_list_user()
+{
+    $list_user = db_fetch_array("SELECT * FROM tbl_users");
+    return $list_user;
+}
+function load_all_key_word($search)
+{
+    $result = db_fetch_array("SELECT * FROM `tbl_users` where `username` like '%{$search}%' or `email` like '%{$search}%'");
+    return $result;
+}
+function db_insert_user($data)
+{
+    return db_insert("tbl_users", $data);
+}
+function active_user($active_token, $data)
+{
+    db_update('tbl_users', $data, "active_token = '$active_token'");
 }
 function check_active_token($active_token)
 {
     $check_token = db_num_rows("SELECT * FROM tbl_users WHERE active_token = '$active_token' AND is_active = '0'");
     echo $check_token;
     if ($check_token > 0) {
-        return true;
-    }
-    return false;
-}
-function check_login($username, $password)
-{
-    $check_user = db_num_rows("SELECT * FROM tbl_users WHERE username = '$username' AND password = '$password'");
-    if ($check_user > 0) {
         return true;
     }
     return false;

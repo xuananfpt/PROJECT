@@ -118,7 +118,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="?mod=users&action=update" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
-                            <li><a href="?mod=users&action=logout" title="Thoát">Thoát</a></li>
+                            <li><a href="http://localhost/unitop/back-end/project/ismart.com/PROJECT/?mod=users&action=logout" title="Thoát">Thoát</a></li>
                         </ul>
                     </div>
                 </div>

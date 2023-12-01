@@ -45,7 +45,7 @@ function set_value($label_filed) {
     //Tên biến thôi bạn ơi
     global $$label_filed;
     if (!empty($$label_filed))
-        echo $$label_filed;
+        return $$label_filed;
 }
 function redirect_to($url) {
     if(!empty($url)) {
