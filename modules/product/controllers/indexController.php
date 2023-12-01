@@ -7,8 +7,17 @@ function construct()
 // //Đặt tên đúng cách
 function indexAction()
 {
+    if (isset($_POST['btn-search'])) {
+        $keyw = $_POST['keyw'];
+        $list_product = get_list_product($keyw);
+        show_array($list_product);
+        $data['list_product'] = $list_product;
+        load_view('index', $data);
+    }
 
-    load_view('index');
+    // show_array($list_product);
+    // load_view('listProduct', $data);
+
 }
 
 function detailProductAction()
@@ -100,6 +109,7 @@ function detailProductAction()
     load_view('detailProduct', $data);
 }
 
+
 function insertCommentAction()
 {
     if (isset($_POST['btn-comment'])) {
@@ -128,3 +138,9 @@ alert("Binhg luận đã được ẩn, hãy quay lại trang chủ");
 }
 
 ?>
+
+// function sameProductAction()
+// {
+    
+// }
+

@@ -73,6 +73,7 @@
                                 <input type="number" name="quantity" min=1 max=<?= $get_product['product_quantity'] ?>
                                     value="1" id="num-order">
 
+
                             </div>
                             <span>Giá bán:</span>
                             <div class="price">
@@ -100,6 +101,26 @@
                     </p>
                 </div>
             </div>
+
+                         </div>
+                         <span>Giá bán:</span>
+                         <div class="price">
+                             <p class="discount-price"><?= currency_format($get_product['product_discount'], 'đ') ?></p>
+                             <span><?= currency_format($get_product['product_price'],'đ') ?></span>
+                         </div>
+                         <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart">Thêm giỏ hàng</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="section" id="post-product-wp">
+                 <div class="section-head">
+                     <h3 class="section-title">Mô tả sản phẩm</h3>
+                 </div>
+                 <div class="section-detail">
+                     <p><?= $get_product['product_detail'] ?></p>
+                 </div>
+             </div>
+
 
             <div class="section" id="post-product-wp">
                 <div class="section-head">
@@ -184,6 +205,7 @@
                                         <span>Trả góp 0%</span>
                                     </div>
 
+
                                 </div>
                                 <a href="?page=detail_product" title="" class="product-name">
                                     <?= $item['product_name'] ?>
@@ -204,6 +226,22 @@
                             </li>
                         <?php } ?>
                         <!-- <li>
+
+                                 </div>
+                                 <a href="?page=detail_product" title="" class="product-name"><?= $item['product_name'] ?></a>
+                                 <div class="price">
+                                    <span class="new"><?= currency_format($item['product_discount'], 'đ')  ?></span>
+                                    <span class="old"><?= currency_format($item['product_price'], 'đ') ?></span>
+
+                                </div>
+                                 <div class="action clearfix">
+                                     <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
+                                     <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                 </div>
+                             </li>
+                         <?php } ?>
+                         <!-- <li>
+
                              <a href="" title="" class="thumb">
                                  <img src="public/images/img-pro-18.png">
                              </a>

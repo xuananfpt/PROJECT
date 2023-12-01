@@ -29,7 +29,7 @@
         <div id="container">
             <div id="header-wp" class="bg-danger">
                 <div class="wp-inner clearfix">
-                    <a href="?page=home" title="" id="logo" class="fl-left">DASTORE</a>
+                    <a href="../?" title="" id="logo" class="fl-left">DASTORE</a>
                     <ul id="main-menu" class="fl-left">
                         <li>
                             <a href="?page=list_post" title="">Trang chủ</a>

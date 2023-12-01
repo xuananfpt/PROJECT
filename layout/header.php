@@ -39,30 +39,68 @@
                                 <li>
                                     <a href="?mod=product&action=index" title="">Sản phẩm</a>
                                 </li>
-                               
+
                                 <li>
                                     <a href="?page=detail_blog" title="">Giới thiệu</a>
                                 </li>
-                             
-                                 <li>
+                                <?php if (isset($_SESSION['login'])) { ?>
+
+                                    <li style="display:flex" class="profile">
+
+                                        <a><?= $_SESSION['login']['fullname'] ?></a>
+                                        <img style="height: 35px; width: 35px;border-radius: 100%;margin: 3px 0 0 5px;" src="admin/public/images/<?= $_SESSION['login']['user_image'] ?>" alt="">
+                                        <ul class="sub-menu">
+                                            <?php
+                                            if ($_SESSION['login']['role'] == 1) {
+                                            ?>
+                                                <li>
+                                                    <a href="admin/?mod=home&action=index">Trang quản trị</a>
+                                                </li>
+                                                <li>
+                                                    <a href="?mod=users&action=update">Chỉnh sửa thông tin</a>
+                                                </li>
+                                                <li>
+                                                    <a href="?mod=users&action=logout">Đăng xuất</a>
+                                                </li>
+                                            <?php
+                                            } else {
+                                            ?>
+
+                                                <li>
+                                                    <a href="?mod=users&action=update">Chỉnh sửa thông tin</a>
+                                                </li>
+                                                <li>
+                                                    <a href="?mod=users&action=logout">Đăng xuất</a>
+                                                </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                                            }
+                                        } else { ?>
+                                <li>
                                     <a href="?mod=users&action=login" title="">Đăng nhập</a>
-                                    
+
                                 </li>
-                                 <li>
-                                    <a href="?mod=users&action=register" title="">Đăng kí</a>
-                                    
+                                <li>
+                                    <a href="?mod=users&action=register" title="">Đăng ký</a>
+
                                 </li>
+                            <?php }
+                            ?>
+
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div id="head-body" class="clearfix">
                     <div class="wp-inner">
-                        <a href="?page=home" title="" id="logo" class="fl-left"><img src="public/images/logo.png" /></a>
+                        <a href="?page=home" title="" id="logo" class="fl-left" style="font-size: 35px;font-weight: bold;margin-top: 15px;">
+                            <h1>DASTORE</h1>
+                        </a>
                         <div id="search-wp" class="fl-left">
                             <form method="POST" action="">
-                                <input type="text" name="s" id="s" placeholder="Nhập từ khóa tìm kiếm tại đây!">
-                                <button type="submit" id="sm-s">Tìm kiếm</button>
+                                <input type="text" name="keyw" id="s" placeholder="Nhập từ khóa tìm kiếm tại đây!">
+                                <button type="submit" id="sm-s" name="bt-search">Tìm kiếm</button>
                             </form>
                         </div>
                         <div id="action-wp" class="fl-right">

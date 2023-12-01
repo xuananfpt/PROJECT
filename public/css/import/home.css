@@ -181,6 +181,9 @@
   font-family: "Roboto Medium";
   margin: 15px 0px 5px 0px;
   line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #feature-product-wp .list-item li .price,
 #list-product-wp .list-item li .price,
@@ -293,6 +296,7 @@
   border-radius: 0 15px 15px 0;
   text-align: center;
   display: flex;
+  margin-top: 10px;
 }
 .percent {
   background-color: #da1818;

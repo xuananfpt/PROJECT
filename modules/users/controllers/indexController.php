@@ -136,7 +136,6 @@ function registerAction()
                         'email' => $email,
                         'created_date' => $created_date,
                         'active_token' => $active_token,
-                        'reg_date' => time(),
                     );
                     db_insert_user($data);
                     redirect("https://mail.google.com/mail/u/0/#inbox");
@@ -173,11 +172,11 @@ function activeAction()
     } else {
         echo "Yêu cầu kích hoạt không hợp lệ hoặc bạn đã kích hoạt từ trước";
     }
-
 }
 
 function logoutAction()
 {
+    unset($_SESSION['login']);
     unset($_SESSION['is_login']);
     unset($_SESSION['login']);
     unset($_SESSION['user_login']);
@@ -247,7 +246,6 @@ function checkEmailAction()
         } else {
             echo "Yêu cầu lấy lại mật khẩu không hợp lệ";
         }
-
     } else {
         if (isset($_POST['btn_reset'])) {
             #kiểm tra email
@@ -334,7 +332,7 @@ function updateAction()
     //Lấy dữ liệu ở trên database xuống theo cái thằng lưu trữ SESSION
     //Xong rồi đẩy dữ liệu qua phần view
     $info_user = get_user_by_username(user_login());
-    // show_array($info_user);
+    show_array($info_user);
     $data['info_user'] = $info_user;
     load_view('update', $data);
 }
@@ -361,4 +359,3 @@ function listUserAction()
         load_view('listUser', $data);
     }
 }
-?>
