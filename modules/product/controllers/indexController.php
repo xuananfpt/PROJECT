@@ -20,8 +20,32 @@ function detailProductAction()
     $get_image = get_image_product($id);
     // show_array($get_image);
     $data['get_image'] = $get_image;
+
+    // $id = $_GET['id'];
+    $iddm = $get_product['product_cat'];
+    $same_product = product_cat_same($id, $iddm);
+    // show_array($same_product);
+    $data['same_product'] = $same_product;
+    // load_view('sameProduct', $data);
     load_view('detailProduct', $data);
 }
-function editAction()
+
+function insertCommentAction()
 {
+    if (isset($_POST['btn-comment'])) {
+        if (isset($_SESSION['login'])) {
+            show_array($_SESSION['login']);
+        }
+
+        $comment_content = $_POST['comment_content'];
+    }
+
+    $data = array(
+        'comment_content' => $comment_content,
+    );
 }
+
+// function sameProductAction()
+// {
+    
+// }
