@@ -7,8 +7,17 @@ function construct()
 // //Đặt tên đúng cách
 function indexAction()
 {
+    if (isset($_POST['btn-search'])) {
+        $keyw = $_POST['keyw'];
+        $list_product = get_list_product($keyw);
+        show_array($list_product);
+        $data['list_product'] = $list_product;
+        load_view('index', $data);
+    }
 
-    load_view('index');
+    // show_array($list_product);
+    // load_view('listProduct', $data);
+
 }
 
 function detailProductAction()
@@ -28,21 +37,6 @@ function detailProductAction()
     $data['same_product'] = $same_product;
     // load_view('sameProduct', $data);
     load_view('detailProduct', $data);
-}
-
-function insertCommentAction()
-{
-    if (isset($_POST['btn-comment'])) {
-        if (isset($_SESSION['login'])) {
-            show_array($_SESSION['login']);
-        }
-
-        $comment_content = $_POST['comment_content'];
-    }
-
-    $data = array(
-        'comment_content' => $comment_content,
-    );
 }
 
 // function sameProductAction()
