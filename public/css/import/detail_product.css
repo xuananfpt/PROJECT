@@ -157,12 +157,14 @@
 #post-product-wp .section-title,
 #same-category-wp .section-title {
   background-color: #da1818;
-  font-size: 21px;
+  font-size: 16px;
   margin: 35px 0px 20px 0px;
   text-transform: uppercase;
   padding: 10px;
   color: #fff;
-  width: 250px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
 }
 #post-product-wp .section-detail p {
   padding-bottom: 15px;
@@ -185,11 +187,45 @@
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   border-radius: 5px;
 }
-.image-product{
+.image-product {
   display: flex;
 }
-.owl-wrapper{
- 
-    left: 0px;
-    display: flex;
+.owl-wrapper {
+  left: 0px;
+  display: flex;
+}
+.section-detail form {
+  display: flex;
+  position: relative;
+}
+.form-comment {
+  width: 100%;
+}
+.form-comment input {
+  font-size: 18px;
+  width: 100%;
+  height: 200px;
+  padding-left: 10px;
+  padding-bottom: 120px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 10px;
+}
+.btn-comment {
+  right: 3%;
+  bottom: 5%;
+  position: absolute;
+}
+.btn-comment input {
+  background: #da1818;
+  padding: 10px 15px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  border-radius: 10px;
+  color: #fff;
+}
+.btn-comment input:hover{
+  transition: 0.5s ease;
+  background-color: #000;
 }

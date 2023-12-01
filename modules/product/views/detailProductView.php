@@ -73,27 +73,58 @@
                      <p><?= $get_product['product_detail'] ?></p>
                  </div>
              </div>
+
+             <div class="section" id="post-product-wp">
+                 <div class="section-head">
+                     <h3 class="section-title">Bình luận</h3>
+                 </div>
+
+                 <div class="section-detail">
+                     <form action="" method="post">
+                         <div class="form-comment">
+                             <input type="text" name="comment-content" placeholder="Nhập bình luận tại đây...">
+                         </div>
+                         <div class="btn-comment">
+                             <input type="submit" name="btn-comment" value="Gửi bình luận">
+                         </div>
+
+                     </form>
+                 </div>
+             </div>
              <div class="section" id="same-category-wp">
                  <div class="section-head">
-                     <h3 class="section-title">Cùng chuyên mục</h3>
+                     <h3 class="section-title">Sản phẩm cùng loại</h3>
                  </div>
                  <div class="section-detail">
                      <ul class="list-item">
-                         <li>
-                             <a href="" title="" class="thumb">
-                                 <img src="public/images/img-pro-17.png">
-                             </a>
-                             <a href="" title="" class="product-name">Laptop HP Probook 4430s</a>
-                             <div class="price">
-                                 <span class="new">17.900.000đ</span>
-                                 <span class="old">20.900.000đ</span>
-                             </div>
-                             <div class="action clearfix">
-                                 <a href="" title="" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                 <a href="" title="" class="buy-now fl-right">Mua ngay</a>
-                             </div>
-                         </li>
-                         <li>
+                         <?php foreach ($same_product as $item) {
+                            ?>
+                             <li>
+                                 <a href="?mod=product&action=detailProduct&id=<?= $item['product_id'] ?>" title="" class="thumb">
+                                     <img src="admin/public/images/<?= $item['product_image'] ?>">
+                                 </a>
+                                 <div class="percent-pay">
+                                     <!-- <div class="percent">
+                                         <p>Giảm <?= $item['phantram'] ?>%</p>
+                                     </div> -->
+                                     <div class="pay">
+                                         <span>Trả góp 0%</span>
+                                     </div>
+
+                                 </div>
+                                 <a href="?page=detail_product" title="" class="product-name"><?= $item['product_name'] ?></a>
+                                 <div class="price">
+                                     <span class="new"><?= $item['product_discount'] ?></span>
+                                     <span class="old"><?= $item['product_price'] ?></span>
+
+                                 </div>
+                                 <div class="action clearfix">
+                                     <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
+                                     <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                 </div>
+                             </li>
+                         <?php } ?>
+                         <!-- <li>
                              <a href="" title="" class="thumb">
                                  <img src="public/images/img-pro-18.png">
                              </a>
@@ -176,7 +207,7 @@
                                  <a href="" title="" class="add-cart fl-left">Thêm giỏ hàng</a>
                                  <a href="" title="" class="buy-now fl-right">Mua ngay</a>
                              </div>
-                         </li>
+                         </li> -->
                      </ul>
                  </div>
              </div>
