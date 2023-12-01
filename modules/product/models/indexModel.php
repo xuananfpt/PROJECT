@@ -26,3 +26,14 @@ function get_list_product($keyw)
     }
     return $list_product;
 }
+function load_all_comment_product($id)
+{
+    $list_comment = db_fetch_array("SELECT tbl_comment.id_comment,tbl_comment.comment_time, tbl_comment.content_comment ,tbl_users.user_id,tbl_comment.comment_status, tbl_users.user_image ,tbl_users.username,tbl_product.product_id,tbl_comment.create_time FROM tbl_comment JOIN
+tbl_users on tbl_comment.id_user = tbl_users.user_id
+JOIN tbl_product ON tbl_product.product_id = tbl_comment.id_product
+WHERE tbl_product.product_id = '{$id}' AND tbl_comment.comment_status = 1");
+    return $list_comment;
+}
+function db_update_status_cmn($data, $id){
+    db_update('tbl_comment', $data, "id_comment = '{$id}'");
+}
