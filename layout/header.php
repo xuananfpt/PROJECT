@@ -14,7 +14,8 @@
     <link href="public/style.css" rel="stylesheet" type="text/css" />
     <link href="public/responsive.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="public/styleLogin.css">
-
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="public/js/elevatezoom-master/jquery.elevatezoom.js" type="text/javascript"></script>
@@ -77,22 +78,39 @@
                             <div id="cart-wp" class="fl-right">
                                 <div id="btn-cart">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span id="num">2</span>
+                                    <span id="totalProduct"><?php if(isset($_SESSION['addToCart'])) {
+                                        echo count($_SESSION['addToCart']);
+                                    } else {
+                                        echo "0";
+                                    } ?></span>
                                 </div>
                                 <div id="dropdown">
-                                    <p class="desc">Có <span>2 sản phẩm</span> trong giỏ hàng</p>
+                                    <p class="desc">Có <span><?php if (isset($_SESSION['addToCart'])) {
+                                        echo count($_SESSION['addToCart']);
+                                    } else {
+                                        echo "0";
+                                    } ?> sản phẩm</span> trong giỏ hàng</p>
                                     <ul class="list-cart">
-                                        <li class="clearfix">
-                                            <a href="" title="" class="thumb fl-left">
-                                                <img src="public/images/img-pro-11.png" alt="">
-                                            </a>
-                                            <div class="info fl-right">
-                                                <a href="" title="" class="product-name">Sony Express X6</a>
-                                                <p class="price">6.250.000đ</p>
-                                                <p class="qty">Số lượng: <span>1</span></p>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
+                                        <?php if(isset($_SESSION['addToCart'])) {
+                                            $sum = 0;
+                                            foreach($_SESSION['addToCart'] as $item) {
+                                                $sum +=$item['thanhtien'];
+                                                ?>
+        <li class="clearfix">
+            <a href="" title="" class="thumb fl-left">
+                <img src="public/images/<?php echo $item['product_image'] ?>" alt="">
+            </a>
+            <div class="info fl-right">
+                <a href="" title="" class="product-name"><?php echo $item['product_name'] ?></a>
+                <p class="price"><?php echo currency_format($item['product_discount'])  ?></p>
+                <p class="qty">Số lượng: <span><?php echo $item['product_quantity'] ?></span></p>
+            </div>
+        </li>
+                                                        <?php
+                                            }
+                                        } ?>
+                                       
+                                        <!-- <li class="clearfix">
                                             <a href="" title="" class="thumb fl-left">
                                                 <img src="public/images/img-pro-23.png" alt="">
                                             </a>
@@ -101,15 +119,15 @@
                                                 <p class="price">16.250.000đ</p>
                                                 <p class="qty">Số lượng: <span>1</span></p>
                                             </div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     <div class="total-price clearfix">
                                         <p class="title fl-left">Tổng:</p>
-                                        <p class="price fl-right">18.500.000đ</p>
+                                        <p class="price fl-right"><?php if(isset($_SESSION['addToCart'])) echo currency_format($sum) ?></p>
                                     </div>
                                     <dic class="action-cart clearfix">
-                                        <a href="?page=cart" title="Giỏ hàng" class="view-cart fl-left">Giỏ hàng</a>
-                                        <a href="?page=checkout" title="Thanh toán" class="checkout fl-right">Thanh toán</a>
+                                        <a href="?mod=cart&action=index" title="Giỏ hàng" class="view-cart fl-left">Giỏ hàng</a>
+                                        <a href="?mod=cart&action=checkout" title="Thanh toán" class="checkout fl-right">Thanh toán</a>
                                     </dic>
                                 </div>
                             </div>
