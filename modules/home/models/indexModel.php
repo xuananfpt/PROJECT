@@ -26,3 +26,24 @@ function get_list_product_cat_laptop()
     FROM tbl_product where `product_cat`= 2 ");
     return $item;
 }
+function get_list_cat()
+{
+    $item = db_fetch_array("SELECT * FROM tbl_category where cat_status=1");
+    return $item;
+}
+function get_all_product($keyw, $price, $id)
+{
+    $item = "SELECT *, (100 - CEILING((product_discount)/(product_price)*100)) as phantram,
+    CONCAT(FORMAT(product_discount, 0),'đ') as price, CONCAT(FORMAT(product_price,0),'đ') as discount 
+    FROM tbl_product where product_status=1 ";
+    // if ($keyw != "") {
+    //     $item .= "and product_name like '%" . $keyw . "%' or product_code like '%" . $keyw . "%' ";
+    // }
+    if ($price != "") {
+        $item .= "order by product_discount $price ";
+    }
+    if ($id != "") {
+        $item .= "and product_cat='$id' ";
+    }
+    return db_query($item);
+}

@@ -37,7 +37,7 @@
                                     <a href="?" title="">Trang chủ</a>
                                 </li>
                                 <li>
-                                    <a href="?mod=product&action=index" title="">Sản phẩm</a>
+                                    <a href="?mod=home&action=allProduct" title="">Sản phẩm</a>
                                 </li>
 
                                 <li>
@@ -98,15 +98,21 @@
                 </div>
                 <div id="head-body" class="clearfix">
                     <div class="wp-inner">
-                        <a href="?page=home" title="" id="logo" class="fl-left" style="font-size: 35px;font-weight: bold;margin-top: 15px;">
+                        <a href="?" title="" id="logo" class="fl-left" style="font-size: 35px;font-weight: bold;margin-top: 15px;">
                             <h1>DASTORE</h1>
                         </a>
+
+
+
                         <div id="search-wp" class="fl-left">
                             <form method="POST" action="">
                                 <input type="text" name="keyw" id="s" placeholder="Nhập từ khóa tìm kiếm tại đây!">
                                 <button type="submit" id="sm-s" name="bt-search">Tìm kiếm</button>
                             </form>
                         </div>
+
+
+                        
                         <div id="action-wp" class="fl-right">
                             <div id="advisory-wp" class="fl-left">
                                 <span class="title">Tư vấn</span>

@@ -9,6 +9,8 @@ function indexAction()
 {
     $list_phone_cat = get_list_product_cat_phone();
     $list_laptop_cat = get_list_product_cat_laptop();
+    $get_cat = get_list_cat();
+    $data['get_cat'] = $get_cat;
     $list_product = array(
         '1' => $list_phone_cat,
         '2' => $list_laptop_cat,
@@ -27,6 +29,29 @@ function detailProductAction()
     load_view('detailProduct', $data);
 }
 
-function editAction()
+function allProductAction()
 {
+    if (isset($_POST['btn-search'])) {
+        $keyw = $_POST['keyw'];
+    } else {
+        $keyw = "";
+    }
+    if (isset($_GET['price'])) {
+        $price = $_GET['price'];
+    } else {
+        $price = "";
+    }
+    // echo $price;
+    $id = $_GET['id'];
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    }
+
+    $get_cat = get_list_cat();
+    $data['get_cat'] = $get_cat;
+
+
+    $get_product = get_all_product($keyw, $price, $id);
+    $data['get_product'] = $get_product;
+    load_view('allProduct', $data);
 }
