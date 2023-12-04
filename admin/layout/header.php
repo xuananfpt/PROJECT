@@ -111,13 +111,14 @@
                     <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
                         <button class="dropdown-toggle clearfix" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <div id="" class="fl-left">
-                                <img width="50px" class="rounded-circle" height="auto" src="public/images/<?php if (!empty($_SESSION['image_user']))
+                                <img style="height: 45px; width: 45px;border-radius: 100%;margin: 5px 0 0 5px;" class="rounded-circle" height="auto" src="public/images/<?php if (!empty($_SESSION['image_user']))
                                                                                                                 echo $_SESSION['image_user'] ?>">
                             </div>
                             <h3 id="account" class="fl-right"><?php if (!empty($_SESSION['user_login'])) echo $_SESSION['user_login'] ?></h3>
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="?mod=users&action=update" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
+                            <li><a href="http://localhost/unitop/back-end/project/ismart.com/PROJECT/" title="Thông tin cá nhân">Quay lại trang chủ</a></li>
                             <li><a href="http://localhost/unitop/back-end/project/ismart.com/PROJECT/?mod=users&action=logout" title="Thoát">Thoát</a></li>
                         </ul>
                     </div>
