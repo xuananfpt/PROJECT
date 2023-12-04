@@ -47,33 +47,37 @@
 
                                     <li style="display:flex" class="profile">
 
-                                        <a><?= $_SESSION['login']['fullname'] ?></a>
-                                        <img style="height: 35px; width: 35px;border-radius: 100%;margin: 3px 0 0 5px;" src="admin/public/images/<?= $_SESSION['login']['user_image'] ?>" alt="">
-                                        <ul class="sub-menu">
-                                            <?php
-                                            if ($_SESSION['login']['role'] == 1) {
-                                            ?>
-                                                <li>
-                                                    <a href="admin/?mod=home&action=index">Trang quản trị</a>
-                                                </li>
-                                                <li>
-                                                    <a href="?mod=users&action=update">Chỉnh sửa thông tin</a>
-                                                </li>
-                                                <li>
-                                                    <a href="?mod=users&action=logout">Đăng xuất</a>
-                                                </li>
-                                            <?php
-                                            } else {
-                                            ?>
-
-                                                <li>
-                                                    <a href="?mod=users&action=update">Chỉnh sửa thông tin</a>
-                                                </li>
-                                                <li>
-                                                    <a href="?mod=users&action=logout">Đăng xuất</a>
-                                                </li>
-                                        </ul>
-                                    </li>
+                                       <div class="profile_user d-flex">
+                                         <a><?= $_SESSION['login']['fullname'] ?>
+                                            </a>
+                                            <img class="d-block" style="height: 35px; width: 35px;border-radius: 100%;margin: 5px 0 0 5px;"
+                                                src="admin/public/images/<?= $_SESSION['login']['user_image'] ?>" alt="">
+                                            <ul class="sub-menu">
+                                                <?php
+                                                if ($_SESSION['login']['role'] == 1) {
+                                                    ?>
+                                                    <li>
+                                                        <a href="admin/?mod=home&action=index">Trang quản trị</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="?mod=users&action=update">Chỉnh sửa thông tin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="?mod=users&action=logout">Đăng xuất</a>
+                                                    </li>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                        
+                                                    <li>
+                                                        <a href="?mod=users&action=update">Chỉnh sửa thông tin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="?mod=users&action=logout">Đăng xuất</a>
+                                                    </li>
+                                                </ul>
+                                               </div>
+                                            </li>
                                 <?php
                                             }
                                         } else { ?>

@@ -13,7 +13,7 @@ function get_user_by_id($id)
 }
 function get_list_order()
 {
-    $list_order = db_fetch_array("SELECT *, SUM(tbl_detail_dh.price) AS tongtien FROM `tbl_detail_dh` JOIN tbl_order ON tbl_detail_dh.id_order = tbl_order.id_order
+    $list_order = db_fetch_array("SELECT *, SUM(tbl_detail_dh.unit_price) AS tongtien FROM `tbl_detail_dh` JOIN tbl_order ON tbl_detail_dh.id_order = tbl_order.id_order
 JOIN tbl_users ON tbl_users.user_id = tbl_order.id_account
 GROUP BY tbl_detail_dh.id_order");
     return $list_order;
