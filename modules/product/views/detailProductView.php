@@ -53,6 +53,157 @@
                          <span>Số lượng:</span>
                          <div id="num-order-wp">
 
+
+                                <input type="number" name="quantity" min=1 max=<?= $get_product['product_quantity'] ?>
+                                    value="1" id="num-order">
+
+
+                            </div>
+                            <span>Giá bán:</span>
+                            <div class="price">
+                                <p class="discount-price">
+                                    <?= currency_format($get_product['product_discount']); ?>
+                                </p>
+                                <input type="hidden" name="product_discount"
+                                    value="<?= $get_product['product_discount'] ?>">
+                                <span>
+                                    <?= currency_format($get_product['product_price']); ?>
+                                </span>
+                            </div>
+                            <input type="submit" class="btn btn-danger" name="btn-add-cart" value="Thêm giỏ hàng">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="section" id="post-product-wp">
+    <div class="section-head">
+        <h3 class="section-title">Mô tả sản phẩm</h3>
+    </div>
+    <div class="section-detail">
+        <p>
+            <?= $get_product['product_detail'] ?>
+                    </p>
+                    <div class="section" id="post-product-wp">
+                        <div class="section-head">
+                            <h3 class="section-title">Bình luận</h3>
+                        </div>
+            
+                        <div class="section-detail">
+                            <form action="" method="post">
+                                <div class="form-comment">
+                                    <input type="text" name="binhluan" placeholder="Nhập bình luận tại đây...">
+                                </div>
+                                <div class="btn-comment">
+                                    <input type="submit" name="btn-comment" value="Gửi bình luận">
+                                </div>
+                            </form>
+                            <div class="comment">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr>
+                                            <td>Tên user</td>
+                                            <td>Ảnh user</td>
+                                            <td>Nội dung comment</td>
+                                            <td>Ngày comment</td>
+                                            <td>Thu hồi</td>
+            
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                        <?php foreach ($load_comment as $comment) {
+                                            ?>
+                                            <tr class="text-center">
+                                                <td class="text-center">
+                                                    <?= $comment['username'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img class="image-comment " src="public/images/<?php echo $comment['user_image'] ?>"
+                                                        alt="">
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $comment['content_comment'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $comment['comment_time'] ?>
+                                                </td>
+                                                <td>
+                                                    <div class="text-center">
+                                                        <a
+                                                            href="?mod=product&action=trash&id_comment=<?php echo $comment['id_comment']; ?>&id_product=<?php echo $comment['product_id']; ?>"><i
+                                                                class="fa fa-trash" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </td>
+            
+                                            </tr>
+                                            <?php
+                                        } ?>
+            
+            
+            
+                                    </tbody>
+            
+                                </table>
+                            </div>
+                            <div class="error">
+                                <?php echo form_error("binhluan") ?>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="section" id="same-category-wp">
+                        <div class="section-head">
+                            <h3 class="section-title">Sản phẩm cùng loại</h3>
+                        </div>
+                        <div class="section-detail">
+                            <ul class="list-item">
+                                <?php foreach ($same_product as $item) {
+                                    ?>
+                                    <li>
+                                        <a href="?mod=product&action=detailProduct&id=<?= $item['product_id'] ?>" title=""
+                                            class="thumb">
+                                            <img src="admin/public/images/<?= $item['product_image'] ?>">
+                                        </a>
+                                        <div class="percent-pay">
+                                            <!-- <div class="percent">
+                                                             <p>Giảm <?= $item['phantram'] ?>%</p>
+                                                         </div> -->
+                                            <div class="pay">
+                                                <span>Trả góp 0%</span>
+                                            </div>
+            
+            
+                                        </div>
+                                        <a href="?page=detail_product" title="" class="product-name">
+                                            <?= $item['product_name'] ?>
+                                        </a>
+                                        <div class="price">
+                                            <span class="new">
+                                                <?= $item['product_discount'] ?>
+                                            </span>
+                                            <span class="old">
+                                                <?= $item['product_price'] ?>
+                                            </span>
+            
+                                        </div>
+                                        <div class="action clearfix">
+                                            <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
+                                            <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                        </div>
+                                    </li>
+                                <?php } ?>
+            
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thêm comment vô đây -->
+            
+            </div>
+
+
+        </div>
+=======
                              <input type="number" min=0 max=<?= $get_product['product_quantity'] ?> value="1" id="num-order">
 
                          </div>
@@ -111,12 +262,83 @@
                                          <span>Trả góp 0%</span>
                                      </div>
 
-                                 </div>
-                                 <a href="?page=detail_product" title="" class="product-name"><?= $item['product_name'] ?></a>
-                                 <div class="price">
-                                    <span class="new"><?= currency_format($item['product_discount'], 'đ')  ?></span>
-                                    <span class="old"><?= currency_format($item['product_price'], 'đ') ?></span>
 
+        <div class="sidebar fl-left">
+            <div class="section" id="category-product-wp">
+                <div class="section-head">
+                    <h3 class="section-title">Danh mục sản phẩm</h3>
+                </div>
+                <div class="secion-detail">
+                    <ul class="list-item">
+                        <li>
+                            <a href="?page=category_product" title="">Điện thoại</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="?page=category_product" title="">Iphone</a>
+                                </li>
+                                <li>
+                                    <a href="?page=category_product" title="">Samsung</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="?page=category_product" title="">Iphone X</a>
+                                        </li>
+                                        <li>
+                                            <a href="?page=category_product" title="">Iphone 8</a>
+                                        </li>
+                                        <li>
+                                            <a href="?page=category_product" title="">Iphone 8 Plus</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="?page=category_product" title="">Oppo</a>
+                                </li>
+                                <li>
+                                    <a href="?page=category_product" title="">Bphone</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="?page=category_product" title="">Máy tính bảng</a>
+                        </li>
+                        <li>
+                            <a href="?page=category_product" title="">laptop</a>
+                        </li>
+                        <li>
+                            <a href="?page=category_product" title="">Tai nghe</a>
+                        </li>
+                        <li>
+                            <a href="?page=category_product" title="">Thời trang</a>
+                        </li>
+                        <li>
+                            <a href="?page=category_product" title="">Đồ gia dụng</a>
+                        </li>
+                        <li>
+                            <a href="?page=category_product" title="">Thiết bị văn phòng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section" id="banner-wp">
+                <div class="section-detail">
+                    <a href="" title="" class="thumb">
+                        <img src="public/images/banner.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+
+
+<?php get_footer() ?>
+
+=======
                                 </div>
                                  <div class="action clearfix">
                                      <a href="?mod=cart&action=index" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
@@ -279,3 +501,4 @@
          </div>
      </div>
      <?php get_footer() ?>
+
