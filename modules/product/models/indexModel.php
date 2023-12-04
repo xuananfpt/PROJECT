@@ -37,3 +37,6 @@ WHERE tbl_product.product_id = '{$id}' AND tbl_comment.comment_status = 1");
 function db_update_status_cmn($data, $id){
     db_update('tbl_comment', $data, "id_comment = '{$id}'");
 }
+function insert_comment($data){
+    db_insert('tbl_comment',$data);
+}
