@@ -190,150 +190,13 @@
                             </li>
                         <?php
                         } ?>
-                        <!-- <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-18.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Lenovo IdeaPad 110</a>
-                            <div class="price">
-                                <span class="new">9.490.000đ</span>
-                                <span class="old">10.490.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-19.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Acer ES1 533</a>
-                            <div class="price">
-                                <span class="new">7.490.000đ</span>
-                                <span class="old">9.490.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-20.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Lenovo IdeaPad 110</a>
-                            <div class="price">
-                                <span class="new">6.990.000đ</span>
-                                <span class="old">7.990.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-21.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Asus X441NA</a>
-                            <div class="price">
-                                <span class="new">6.490.000đ</span>
-                                <span class="old">8.490.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-22.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Acer Aspire ES1</a>
-                            <div class="price">
-                                <span class="new">6.390.000đ</span>
-                                <span class="old">7.390.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-05.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Lenovo IdeaPad 120S</a>
-                            <div class="price">
-                                <span class="new">5.190.000đ</span>
-                                <span class="old">7.190.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="" title="" class="thumb">
-                                <img src="public/images/img-pro-23.png">
-                            </a>
-                            <a href="" title="" class="product-name">Laptop Asus A540UP I5</a>
-                            <div class="price">
-                                <span class="new">14.490.000đ</span>
-                                <span class="old">16.490.000đ</span>
-                            </div>
-                            <div class="action clearfix">
-                                <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section" id="support-wp">
-                <div class="section-detail">
-                    <ul class="list-item clearfix">
-                        <li>
-                            <div class="thumb">
-                                <img src="public/images/icon-1.png">
-                            </div>
-                            <h3 class="title">Miễn phí vận chuyển</h3>
-                            <p class="desc">Tới tận tay khách hàng</p>
-                        </li>
-                        <li>
-                            <div class="thumb">
-                                <img src="public/images/icon-2.png">
-                            </div>
-                            <h3 class="title">Tư vấn 24/7</h3>
-                            <p class="desc">1900.9999</p>
-                        </li>
-                        <li>
-                            <div class="thumb">
-                                <img src="public/images/icon-3.png">
-                            </div>
-                            <h3 class="title">Tiết kiệm hơn</h3>
-                            <p class="desc">Với nhiều ưu đãi cực lớn</p>
-                        </li>
-                        <li>
-                            <div class="thumb">
-                                <img src="public/images/icon-4.png">
-                            </div>
-                            <h3 class="title">Thanh toán nhanh</h3>
-                            <p class="desc">Hỗ trợ nhiều hình thức</p>
-                        </li>
-                        <li>
-                            <div class="thumb">
-                                <img src="public/images/icon-5.png">
-                            </div>
-                            <h3 class="title">Đặt hàng online</h3>
-                            <p class="desc">Thao tác đơn giản</p>
-                        </li> -->
                     </ul>
                 </div>
             </div>
         </div>
 
+
+        <!-- Danh mục sản phẩm -->
         <div class="sidebar fl-left">
             <div class="section" id="category-product-wp">
                 <div class="section-head">
@@ -341,9 +204,10 @@
                 </div>
                 <div class="secion-detail">
                     <ul class="list-item">
-                        <li>
-                            <a href="?page=category_product" title="">Điện thoại</a>
-                            <ul class="sub-menu">
+                        <?php foreach ($get_cat as $item) { ?>
+                            <li>
+                                <a href="?mod=home&action=allProduct&id=<?= $item['cat_id'] ?>" title=""><?= $item['cat_name'] ?></a>
+                                <!-- <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Iphone</a>
                                 </li>
@@ -367,9 +231,10 @@
                                 <li>
                                     <a href="?page=category_product" title="">Bphone</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li>
+                            </ul> -->
+                            </li>
+                        <?php } ?>
+                        <!-- <li>
                             <a href="?page=category_product" title="">Máy tính bảng</a>
                         </li>
                         <li>
@@ -386,10 +251,13 @@
                         </li>
                         <li>
                             <a href="?page=category_product" title="">Thiết bị văn phòng</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
+
+
+
             <div class="section" id="selling-wp">
                 <div class="section-head">
                     <h3 class="section-title">Sản phẩm bán chạy</h3>
@@ -503,14 +371,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- <div class="section" id="banner-wp">
-                <div class="section-detail">
-                    <a href="" title="" class="thumb">
-                        <img src="public/images/banner.png" alt="">
-                    </a>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>

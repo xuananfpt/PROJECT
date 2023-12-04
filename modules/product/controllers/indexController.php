@@ -138,9 +138,3 @@ alert("Binhg luận đã được ẩn, hãy quay lại trang chủ");
 }
 
 ?>
-
-// function sameProductAction()
-// {
-    
-// }
-
