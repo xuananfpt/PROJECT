@@ -12,7 +12,7 @@
         <div id="content" class="fl-right">
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <p>Bạn đã thay đổi mật khẩu thành công vui lòng click vào <a href="?mod=users&action=login">link</a> sau để đăng nhập lại</p>
+                    <p>Bạn đã thay đổi mật khẩu thành công vui lòng click vào: <a href="?mod=users&action=update">thông tin tài khoản</a> </p>
                 </div>
             </div>
         </div>

@@ -263,7 +263,7 @@ function checkEmailAction()
                 if (check_email($email)) {
                     //Mã hoá mã email gửi đến người dùng
                     $reset_token = md5($email . time());
-                    //Mảng này để update 
+                  
                     $data = array(
                         'reset_token' => $reset_token,
                     );
@@ -292,9 +292,13 @@ function updateAction()
     // Load lại thông tin cũ
     // Validate form 
     // Cập nhật thông tin
+
     global $error;
     $get_user = get_list_user();
     $data['get_user'] = $get_user;
+
+    // global $error;
+  
     if (isset($_POST['btn-update'])) {
         // echo "Đã bấm submit";
         $error = array();
@@ -338,13 +342,22 @@ function updateAction()
                 'user_image' => $user_image,
             );
             //Cập nhật dữ liệu thằng mới login zoo
-            update_user_login(user_login(), $data);
+            update_user_login($_SESSION['login']['username'], $data);
         }
     }
     //Lấy dữ liệu ở trên database xuống theo cái thằng lưu trữ SESSION
     //Xong rồi đẩy dữ liệu qua phần view
-    $info_user = get_user_by_username(user_login());
+
+    // show_array($_SESSION['user_login'])
+    // echo user_login();
+    // echo user_login();
+    // echo $_SESSION('user_login');
+    // show_array($_SESSION['login']);
+    $username_login = $_SESSION['login']['username'];
+
+    $info_user = get_user_by_username($username_login);
+
     // show_array($info_user);
     $data['info_user'] = $info_user;
-    load_view('update', $data);
+    load_view('update',$data);
 }
