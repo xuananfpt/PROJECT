@@ -24,7 +24,6 @@ function detailCartAction() {
         $id_status = $_POST['option_status'];
         // echo $id_status;
         // echo $id;
-        
         $data_update = array(
             'id_status' => $id_status
         );
