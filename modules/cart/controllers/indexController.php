@@ -25,24 +25,24 @@ function checkOutAction()
     if (isset($_POST['order-now'])) {
         $dem++;
         if (empty($_POST['name_customer'])) {
-            $error['name_customer'] = "Voi lòng nhập thông tin họ tên";
+            $error['name_customer'] = "Vui lòng nhập thông tin họ tên";
         } else {
             $name_customer = $_POST['name_customer'];
         }
         if (empty($_POST['email'])) {
-            $error['email'] = "Voi lòng nhập thông tin email";
+            $error['email'] = "Vui lòng nhập thông tin email";
         } else {
             $email = $_POST['email'];
         }
 
         if (empty($_POST['address_customer'])) {
-            $error['address_customer'] = "Voi lòng nhập thông tin địa chỉ";
+            $error['address_customer'] = "Vui lòng nhập thông tin địa chỉ";
         } else {
             $address_customer = $_POST['address_customer'];
         }
 
         if (empty($_POST['phone_customer'])) {
-            $error['phone_customer'] = "Voi lòng nhập thông tin số điện thoại";
+            $error['phone_customer'] = "Vui lòng nhập thông tin số điện thoại";
         } else {
             $phone_customer = $_POST['phone_customer'];
         }
@@ -55,7 +55,7 @@ function checkOutAction()
         }
         $sumdh = $_POST['sumdh'];
         $code_order = "hahaha" . $dem;
-
+        // $date_time = date('Y-m-d');
         if (empty($error)) {
             $data = array(
                 'id_account' => $id_account,
@@ -64,7 +64,8 @@ function checkOutAction()
                 'address_customer' => $address_customer,
                 'sum_money' => $sumdh,
                 'phone_customer' => $phone_customer,
-                'code_orders' => $code_order
+                'code_orders' => $code_order,
+                'date_time' => date('Y-m-d'),
             );
             db_add_order($data);
 
@@ -75,6 +76,7 @@ function checkOutAction()
             foreach ($_SESSION['addToCart'] as $key) {
                 $data1 = array(
                     'id_order' => $id_order,
+                    'product_name' => $key['product_name'],
                     'id_product' => $key['product_id'],
                     'quantity' => $key['product_quantity'],
                     'unit_price' => $key['thanhtien']
@@ -90,4 +92,3 @@ function checkOutAction()
     }
     load_view('checkout');
 }
-?>

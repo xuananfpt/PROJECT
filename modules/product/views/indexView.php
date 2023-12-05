@@ -7,15 +7,6 @@
 
 
             <div class="section" id="list-product-wp">
-                <div class="section-head">
-                    <!-- <form action="" method="post">
-                        <select name="btn-submit" id="">
-                            <option value="ASC">Tăng dần</option>
-                            <option value="DESC">Giảm dần</option>
-                        </select>
-                        <input type="submit" name="filter" id="" value="Nọc">
-                    </form> -->
-                </div>
                 <div class="section-detail">
                     <ul class="list-item clearfix">
                         <?php
@@ -62,7 +53,7 @@
                 </div>
             </div> -->
         </div>
-    </div>
-</div>
 
-<?php get_footer() ?>
+    </div>
+
+    <?php get_footer() ?>

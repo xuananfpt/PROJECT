@@ -43,3 +43,8 @@ function insert_comment($data) {
     db_insert('tbl_comment', $data);
 }
 
+function get_list_cat()
+{
+    $item = db_fetch_array("SELECT * FROM tbl_category where cat_status=1");
+    return $item;
+}
