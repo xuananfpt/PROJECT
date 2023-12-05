@@ -263,7 +263,7 @@ function checkEmailAction()
                 if (check_email($email)) {
                     //Mã hoá mã email gửi đến người dùng
                     $reset_token = md5($email . time());
-                  
+
                     $data = array(
                         'reset_token' => $reset_token,
                     );
@@ -292,13 +292,12 @@ function updateAction()
     // Load lại thông tin cũ
     // Validate form 
     // Cập nhật thông tin
-
     global $error;
     $get_user = get_list_user();
     $data['get_user'] = $get_user;
 
     // global $error;
-  
+
     if (isset($_POST['btn-update'])) {
         // echo "Đã bấm submit";
         $error = array();
@@ -343,6 +342,14 @@ function updateAction()
             );
             //Cập nhật dữ liệu thằng mới login zoo
             update_user_login($_SESSION['login']['username'], $data);
+           
+            echo "
+            <script>
+            if (performance.navigation.type == 0) {
+                window.location.href = window.location.href;
+                window.location.href = '?mod=users&action=update';
+            }
+            </script>";
         }
     }
     //Lấy dữ liệu ở trên database xuống theo cái thằng lưu trữ SESSION
@@ -359,5 +366,5 @@ function updateAction()
 
     // show_array($info_user);
     $data['info_user'] = $info_user;
-    load_view('update',$data);
+    load_view('update', $data);
 }

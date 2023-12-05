@@ -111,10 +111,9 @@
                     <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
                         <button class="dropdown-toggle clearfix" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <div id="" class="fl-left">
-                                <img style="height: 45px; width: 45px;border-radius: 100%;margin: 5px 0 0 5px;" class="rounded-circle" height="auto" src="public/images/<?php if (!empty($_SESSION['image_user']))
-                                                                                                                                                                            echo $_SESSION['image_user'] ?>">
+                                <img style="height: 45px; width: 45px;border-radius: 100%;margin: 5px 0 0 5px;" class="rounded-circle" height="auto" src="public/images/<?php if (!empty($_SESSION['image_user']))                                                                                                                                                                   echo $_SESSION['image_user'] ?>">
                             </div>
-                            
+
                             <h3 id="account" class="fl-right"><?php if (!empty($_SESSION['login']['fullname'])) echo $_SESSION['login']['fullname'] ?></h3>
                         </button>
                         <ul class="dropdown-menu">
