@@ -30,18 +30,20 @@
                     </thead>
                     <tbody>
                         <?php
+                        show_array($_SESSION['addToCart']);
                         if (isset($_SESSION['addToCart'])) {
                             $sum = 0;
                             $i = 0;
+
                             foreach ($_SESSION['addToCart'] as $product) {
                                 $sum += $product['thanhtien'];
-                               
-                                ?>
+
+                        ?>
                                 <tr>
                                     <td>HCA00031</td>
                                     <td>
                                         <a href="" title="" class="thumb">
-                                            <img src="public/images/<?php echo $product['product_image'] ?>" alt="">
+                                            <img src="admin/public/images/<?php echo $product['product_image'] ?>" alt="">
                                         </a>
                                     </td>
                                     <td>
@@ -53,19 +55,17 @@
                                         <?php echo $product['product_discount'] ?>
                                     </td>
                                     <td>
-                                        <input type="text" name="num-order" value="<?php echo $product['product_quantity'] ?>"
-                                            class="num-order">
+                                        <input type="text" name="num-order" value="<?php echo $product['product_quantity'] ?>" class="num-order">
                                     </td>
                                     <td>
                                         <?php echo currency_format($product['thanhtien']) ?>
                                     </td>
                                     <td>
-                                        <a href="?mod=cart&action=deleteCart&i=<?= $i ?>" title="" class="del-product"><i
-                                                class="fa fa-trash-o"></i></a>
+                                        <a href="?mod=cart&action=deleteCart&i=<?= $i ?>" title="" class="del-product"><i class="fa fa-trash-o"></i></a>
                                     </td>
                                 </tr>
-                                <?php
-                                        $i += 1;
+                        <?php
+                                $i += 1;
                             }
                         } ?>
 

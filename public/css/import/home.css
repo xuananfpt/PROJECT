@@ -29,7 +29,7 @@
   display: block;
   font-size: 20px;
   text-transform: uppercase;
-  background: #969696;
+  background: #f12a43;
   color: #fff;
   padding: 15px;
   border-bottom: 1px solid #dadada;
@@ -155,7 +155,7 @@
 }
 #feature-product-wp .section-title,
 #list-product-wp .section-title {
-  background-color: #da1818;
+  background-color: #f12a43;
   padding: 5px;
   width: 250px;
   color: #fff;
@@ -297,6 +297,10 @@
   text-align: center;
   display: flex;
   margin-top: 10px;
+}
+.percent-pay p {
+  margin: 0 !important;
+  padding: 5px;
 }
 .percent {
   background-color: #da1818;

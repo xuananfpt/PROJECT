@@ -17,12 +17,16 @@ function indexAction()
 
 // //Đi vào bên trong ACT
 
-// function logoutAction()
-// {
-//     unset($_SESSION['is_login']);
-//     unset($_SESSION['user_login']);
-//     redirect("?mod=users&action=login");
-// }
+function logoutAction()
+{
+    unset($_SESSION['login']);
+    unset($_SESSION['is_login']);
+    unset($_SESSION['login']);
+    unset($_SESSION['user_login']);
+    unset($_SESSION['image_user']);
+    unset($_SESSION['role_user']);
+    redirect("?mod=users&action=login");
+}
 
 function checkEmailAction()
 {
@@ -52,7 +56,9 @@ function checkEmailAction()
                     $error = array();
                     $success = array();
                     #Kiểm tra password
-                    if (empty($_POST['password'])) {+
+
+                    if (empty($_POST['password'])) {
+                  
                         $error['password'] = "Không được để trống trường pass mới";
                     } else {
                         if (!is_password($_POST['password'])) {
@@ -84,6 +90,82 @@ function checkEmailAction()
                 echo "Yêu cầu lấy lại mật khẩu không hợp lệ";
             }
         } else {
+
+            if (isset($_POST['btn_reset'])) {
+                #kiểm tra email
+                if (empty($_POST['email'])) {
+                    $error['email'] = "Không được để trống email";
+                } else {
+                    if (!is_email($_POST['email'])) {
+                        $error['email'] = "Email không đúng định dạng";
+                    } else {
+                        $email = $_POST['email'];
+                    }
+                }
+                #kết luận sau khi kiểm tra trường dl xong
+                if (empty($error)) {
+                    if (check_email($email)) {
+                        //Mã hoá mã email gửi đến người dùng
+                        $reset_token = md5($email . time());
+                        $data = array(
+                            'reset_token' => $reset_token,
+                        );
+                        //Cập nhập dữ liệu lên database
+                        update_reset_token($data, $email);
+                        //Gửi link khôi phục vào email của người dùng
+                        $link_set_user = base_url("?mod=users&action=checkEmail&reset_token={$reset_token}");
+                        $content = "<p>Bạn vui lòng click vào link sau để khôi phục mật khẩu của bạn: {$link_set_user}</p>
+                        <b>Nếu không phải yêu cầu của bạn, vui lòng bỏ qua email này</b>
+                        <b>ADMIN XUÂN AN XIN CÁM ƠN BẠN ĐÃ QUAN TÂM</b>";
+                        send_mail($email, "", "KHÔI PHỤC MẬT KHẨU CỦA DASMART CỦA BẠN", $content);
+                    } else {
+                        echo "Làm gì có cái này thế em";
+                    }
+                }
+            }
+            load_view('checkEmail');
+        }
+        echo $reset_token;
+    } else {
+        if (isset($_POST['btn_reset'])) {
+            #kiểm tra email
+            if (empty($_POST['email'])) {
+                $error['email'] = "Không được để trống email";
+            } else {
+                if (!is_email($_POST['email'])) {
+                    $error['email'] = "Email không đúng định dạng";
+                } else {
+                    $email = $_POST['email'];
+                }
+            }
+            #kết luận sau khi kiểm tra trường dl xong
+            if (empty($error)) {
+                if (check_email($email)) {
+                    //Mã hoá mã email gửi đến người dùng
+                    $reset_token = md5($email . time());
+                    $data = array(
+                        'reset_token' => $reset_token,
+                    );
+                    //Cập nhập dữ liệu lên database
+                    update_reset_token($data, $email);
+                    //Gửi link khôi phục vào email của người dùng
+                    $link_set_user = base_url("?mod=users&action=checkEmail&reset_token={$reset_token}");
+                    $content = "<p>Bạn vui lòng click vào link sau để khôi phục mật khẩu của bạn: {$link_set_user}</p>
+                <b>Nếu không phải yêu cầu của bạn, vui lòng bỏ qua email này</b>
+                <b>ADMIN XUÂN AN XIN CÁM ƠN BẠN ĐÃ QUAN TÂM</b>";
+                    send_mail($email, "", "KHÔI PHỤC MẬT KHẨU CỦA DASMART CỦA BẠN", $content);
+                } else {
+                    echo "Làm gì có cái này thế em";
+                }
+            }
+        }
+        load_view('checkEmail');
+    }
+}
+// function resetOkAction() {
+//     load_view('resetOK');
+// }
+
 
             if (isset($_POST['btn_reset'])) {
                 #kiểm tra email
@@ -171,6 +253,8 @@ function updateAction()
     // Validate form 
     // Cập nhật thông tin
     global $error;
+    $get_user = get_list_user();
+    $data['get_user'] = $get_user;
     if (isset($_POST['btn-update'])) {
         // echo "Đã bấm submit";
         $error = array();
@@ -196,13 +280,22 @@ function updateAction()
                 $phone_number = $_POST['phone_number'];
             }
         }
+        $target_dir = "public/images/";
+        $target_file = $target_dir . basename($_FILES['image']['name']);
+        if ($_FILES['image']['name'] == "") {
+            $user_image = $get_user['user_image'];
+        } else {
+            $user_image = $_FILES['image']['name'];
+            move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        }
         //Ti nua kiem tra
         if (empty($error)) {
             //Update
             $data = array(
                 'fullname' => $fullname,
                 'address' => $address,
-                'phone_number' => $phone_number
+                'phone_number' => $phone_number,
+                'user_image' => $user_image,
             );
             //Cập nhật dữ liệu thằng mới login zoo
             update_user_login(user_login(), $data);

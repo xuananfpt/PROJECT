@@ -131,7 +131,7 @@
                                         <p>Giảm <?= $item['phantram'] ?>%</p>
                                     </div>
                                     <div class="pay">
-                                        <span>Trả góp 0%</span>
+                                        <p>Trả góp 0%</p>
                                     </div>
 
                                 </div>
@@ -173,7 +173,7 @@
                                         <p>Giảm <?= $item['phantram'] ?>%</p>
                                     </div>
                                     <div class="pay">
-                                        <span>Trả góp 0%</span>
+                                        <p>Trả góp 0%</p>
                                     </div>
 
                                 </div>
@@ -207,31 +207,7 @@
                         <?php foreach ($get_cat as $item) { ?>
                             <li>
                                 <a href="?mod=home&action=allProduct&id=<?= $item['cat_id'] ?>" title=""><?= $item['cat_name'] ?></a>
-                                <!-- <ul class="sub-menu">
-                                <li>
-                                    <a href="?page=category_product" title="">Iphone</a>
-                                </li>
-                                <li>
-                                    <a href="?page=category_product" title="">Samsung</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="?page=category_product" title="">Iphone X</a>
-                                        </li>
-                                        <li>
-                                            <a href="?page=category_product" title="">Iphone 8</a>
-                                        </li>
-                                        <li>
-                                            <a href="?page=category_product" title="">Iphone 8 Plus</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="?page=category_product" title="">Oppo</a>
-                                </li>
-                                <li>
-                                    <a href="?page=category_product" title="">Bphone</a>
-                                </li>
-                            </ul> -->
+
                             </li>
                         <?php } ?>
                         <!-- <li>
