@@ -87,7 +87,7 @@
                                                 </div>
                                                 <?php if($user['role'] != 1) {
                                                     ?>
-                                                    <ul class="list-operation fl-right mt-4">
+                                                    <ul class="list-operation fl-right">
                                                     <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil"
                                                                 aria-hidden="true"></i></a></li>
                                                     <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash"

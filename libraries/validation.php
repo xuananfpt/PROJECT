@@ -30,7 +30,7 @@ function is_email($email)
 function is_phone($phone)
 {
     $partten = "/^(09|08|01|03)+([0-9]{8})$/";
-    if (!preg_match($partten, $_POST['phone'], $matchs))
+    if (!preg_match($partten, $_POST['phone_number'], $matchs))
         return false;
     return true;
 }
