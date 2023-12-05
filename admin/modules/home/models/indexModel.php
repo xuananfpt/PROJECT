@@ -22,6 +22,6 @@ GROUP BY tbl_product.product_cat");
 }
 function get_chart_by_date()
 {
-    $chart = db_fetch_array("Select *,sum(sum_money) as sum_revenue from tbl_order group by date(Date_time)");
+    $chart = db_fetch_array("Select *,sum(sum_money) as sum_revenue from tbl_order group by date(date_time)");
     return $chart;
 }

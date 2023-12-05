@@ -194,7 +194,7 @@ get_header();
                                 <?php
                                 foreach ($chart_date as $chart) {
                                     extract($chart);
-                                    echo "['$Date_time', $sum_revenue],";
+                                    echo "['$date_time', $sum_revenue],";
                                 }
                                 ?>
                             ]);
