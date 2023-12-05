@@ -9,9 +9,6 @@ get_header();
 </style>
 <div id="main-content-wp" class="info-account-page">
     <div class="wrap clearfix">
-        <!-- <?php
-        get_sidebar('users');
-        ?> -->
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix ">
@@ -20,11 +17,11 @@ get_header();
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="display-name">Tên hiển thị</label>
-                                <input type="text" name="fullname" id="display-name" value="<?= $info_user['fullname'] ?>">
+                                <input type="text" name="fullname" id="display-name" value="<?php echo $info_user['fullname'] ?>">
                                 <p class="error">
                                     <?php echo form_error('fullname') ?>
                                 </p>

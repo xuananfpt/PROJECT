@@ -22,6 +22,8 @@ function indexAction()
 
 function detailProductAction()
 {
+    $get_cat = get_list_cat();
+    $data['get_cat'] = $get_cat;
     $id = $_GET['id'];
     if (!isset($_SESSION['addToCart'])) {
         $_SESSION['addToCart'] = [];
@@ -49,15 +51,14 @@ function detailProductAction()
                 'comment_time' => $time_now
             );
             insert_comment($data);
-        }
-        ;
+        };
     }
     #Mảng load comment
     $load_comment = load_all_comment_product($id);
     // show_array($load_comment);
     //Đây là phần lưu giỏ hàng rùi An ơi ...
     $data['load_comment'] = $load_comment;
-   #Mảng lấy gữ liệu PRODUCT
+    #Mảng lấy gữ liệu PRODUCT
     $get_product = get_product_by_id($id);
     $data['get_product'] = $get_product;
     $get_image = get_image_product($id);
@@ -70,6 +71,7 @@ function detailProductAction()
     // show_array($same_product);
     $data['same_product'] = $same_product;
     // load_view('sameProduct', $data);
+
     if (isset($_POST['btn-add-cart'])) {
         // show_array($_POST);
         $product_id = $_GET['id'];
@@ -105,7 +107,7 @@ function detailProductAction()
         }
         redirect("?mod=cart&action=index");
     }
-    
+
     load_view('detailProduct', $data);
 }
 
@@ -124,7 +126,8 @@ function insertCommentAction()
         'comment_content' => $comment_content,
     );
 }
-function trashAction() {
+function trashAction()
+{
     $id_comment = $_GET['id_comment'];
     $id_product = $_GET['id_product'];
     $data = array(
@@ -136,6 +139,3 @@ alert("Binhg luận đã được ẩn, hãy quay lại trang chủ");
             window.location.href = "index.php?act=order";
         </script>"';
 }
-
-?>
-

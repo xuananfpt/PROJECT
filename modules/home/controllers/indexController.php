@@ -42,16 +42,23 @@ function allProductAction()
         $price = "";
     }
     // echo $price;
-    $id = $_GET['id'];
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
+    } else {
+        $id = "";
     }
-
+    if (isset($_GET['min']) && isset($_GET['max'])) {
+        $min = $_GET['min'];
+        $max = $_GET['max'];
+    } else {
+        $min = "";
+        $max = "";
+    }
     $get_cat = get_list_cat();
     $data['get_cat'] = $get_cat;
 
 
-    $get_product = get_all_product($keyw, $price, $id);
+    $get_product = get_all_product($keyw, $price, $id, $min, $max);
     $data['get_product'] = $get_product;
     load_view('allProduct', $data);
 }

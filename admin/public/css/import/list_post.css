@@ -176,10 +176,11 @@ table tr td{
     padding-top: 40px;
 }
 #account {
-    font-family: 'Roboto Medium';
+    /* font-family: 'Roboto Medium';
     font-weight: normal;
     color: #fff;
-    padding: 10px 20px 0px;
+    padding: 10px 20px 0px; */
+    font-size: 20px;
 }
 #logo {
     font-family: 'Roboto Bold';

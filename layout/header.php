@@ -126,6 +126,7 @@
                             <div id="cart-wp" class="fl-right">
                                 <div id="btn-cart">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <?php  ?>
                                     <span id="totalProduct"><?php if(isset($_SESSION['addToCart'])) {
                                         echo count($_SESSION['addToCart']);
                                     } else {

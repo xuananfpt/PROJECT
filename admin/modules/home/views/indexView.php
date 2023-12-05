@@ -35,8 +35,7 @@ get_header();
                                 <a href="?mod=category&action=index" class="text-dark">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
-                                            <img src="public/images/category.jpg" class="card-img" style="width: 85%;"
-                                                alt="">
+                                            <img src="public/images/category.jpg" class="card-img" style="width: 85%;" alt="">
                                         </div>
                                         <div class="col-md-8 mt-3">
                                             <div class="card-body">
@@ -181,32 +180,34 @@ get_header();
                     </script>
                 </div>
                 <div class="col-md-6 admin_chart">
+                    <div id="piechart_3d" style="width: 600px; height: 500px;"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
-                        google.charts.load('current', { 'packages': ['corechart'] });
+                        google.charts.load('current', {
+                            'packages': ['corechart']
+                        });
                         google.charts.setOnLoadCallback(drawChart);
 
                         function drawChart() {
-                            var data = google.visualization.arrayToDataTable([
-                                ['Year', 'Sales', 'Expenses'],
-                                ['2004', 1000, 400],
-                                ['2005', 1170, 460],
-                                ['2006', 660, 1120],
-                                ['2007', 1030, 540]
+                            const data = google.visualization.arrayToDataTable([
+                                ['Ngày', 'Tổng doanh thu'],
+                                <?php
+                                foreach ($chart_date as $chart) {
+                                    extract($chart);
+                                    echo "['$Date_time', $sum_revenue],";
+                                }
+                                ?>
                             ]);
-
-                            var options = {
-                                title: 'Company Performance',
-                                curveType: 'function',
-                                legend: { position: 'bottom' }
+                            // Set Options
+                            const options = {
+                                title: 'BIỂU ĐỒ DOANH THU THEO NGÀY',
+                                is3D: true
                             };
-
-                            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
+                            // Draw
+                            const chart = new google.visualization.LineChart(document.getElementById('piechart_3d'));
                             chart.draw(data, options);
                         }
                     </script>
-                    <div id="curve_chart" style="width: 80%; height: 500px"></div>
                 </div>
             </div>
 

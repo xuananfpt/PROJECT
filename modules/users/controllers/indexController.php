@@ -263,6 +263,7 @@ function checkEmailAction()
                 if (check_email($email)) {
                     //Mã hoá mã email gửi đến người dùng
                     $reset_token = md5($email . time());
+                    //Mảng này để update 
                     $data = array(
                         'reset_token' => $reset_token,
                     );
@@ -292,6 +293,8 @@ function updateAction()
     // Validate form 
     // Cập nhật thông tin
     global $error;
+    $get_user = get_list_user();
+    $data['get_user'] = $get_user;
     if (isset($_POST['btn-update'])) {
         // echo "Đã bấm submit";
         $error = array();
@@ -317,13 +320,22 @@ function updateAction()
                 $phone_number = $_POST['phone_number'];
             }
         }
+        $target_dir = "public/images/";
+        $target_file = $target_dir . basename($_FILES['image']['name']);
+        if ($_FILES['image']['name'] == "") {
+            $user_image = $get_user['user_image'];
+        } else {
+            $user_image = $_FILES['image']['name'];
+            move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        }
         //Ti nua kiem tra
         if (empty($error)) {
             //Update
             $data = array(
                 'fullname' => $fullname,
                 'address' => $address,
-                'phone_number' => $phone_number
+                'phone_number' => $phone_number,
+                'user_image' => $user_image,
             );
             //Cập nhật dữ liệu thằng mới login zoo
             update_user_login(user_login(), $data);
@@ -332,30 +344,7 @@ function updateAction()
     //Lấy dữ liệu ở trên database xuống theo cái thằng lưu trữ SESSION
     //Xong rồi đẩy dữ liệu qua phần view
     $info_user = get_user_by_username(user_login());
-    show_array($info_user);
+    // show_array($info_user);
     $data['info_user'] = $info_user;
     load_view('update', $data);
-}
-
-//TẠi sao phải theo back...
-//Thứ font- khách hàng
-//Riêng font -> sẽ bị xoay theo khách hàng ...
-//Nên học back -> JS -> font -> node -> fullstack -> thực tập
-function resetOkAction()
-{
-    load_view('resetOk');
-}
-function listUserAction()
-{
-    if (isset($_POST['btn-search'])) {
-        $search = $_POST['search'];
-        $list_user = load_all_key_word($search);
-        $data['list_user'] = $list_user;
-        load_view('listUser', $data);
-    } else {
-        $list_user = get_list_user();
-        $data['list_user'] = $list_user;
-        // show_array($list_user);
-        load_view('listUser', $data);
-    }
 }

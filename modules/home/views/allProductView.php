@@ -28,7 +28,7 @@
                                         <p>Giảm <?= $item['phantram'] ?>%</p>
                                     </div>
                                     <div class="pay">
-                                        <span>Trả góp 0%</span>
+                                        <p>Trả góp 0%</p>
                                     </div>
 
                                 </div>
@@ -63,7 +63,16 @@
                     <a href="?mod=home&action=allProduct&price=desc">Giá Cao-Thấp</a>
                 </div>
                 <div class="secion-detail">
-                    <a href="?mod=home&action=allProduct&">Từ cao xuống thấp</a>
+                    <a href="?mod=home&action=allProduct&min=0&max=4000000">Từ 0-4 triệu </a>
+                </div>
+                <div class="secion-detail">
+                    <a href="?mod=home&action=allProduct&min=4000000&max=10000000">Từ 4-10 triệu </a>
+                </div>
+                <div class="secion-detail">
+                    <a href="?mod=home&action=allProduct&min=10000000&max=2000000">Từ 10-20 triệu </a>
+                </div>
+                <div class="secion-detail">
+                    <a href="?mod=home&action=allProduct&min=20000000&max=50000000"> Trên 20 triệu </a>
                 </div>
 
             </div>

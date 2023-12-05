@@ -8,7 +8,7 @@
 }
 #detail-product-wp .info {
   width: 58%;
-  padding: 30px;
+  padding: 5px 20px;
 }
 #detail-product-wp .section-detail,
 #post-product-wp .section-detail {
@@ -67,7 +67,7 @@
 #detail-product-wp .info .product-name {
   font-size: 24px;
   /* padding-bottom: 15px; */
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-bottom: 1px solid;
 }
 #detail-product-wp .info .desc p {
@@ -102,10 +102,10 @@
   font-size: 28px;
 }
 #detail-product-wp .info .price span {
-  font-size: 12px;
+  font-size: 22px;
   text-decoration: line-through;
   margin-left: 30px;
-  color: #000;
+  color: #ccc;
 }
 #num-order-wp {
   margin-bottom: 25px;
@@ -114,8 +114,8 @@
   width: 100%;
 }
 #num-order {
-  width: 100px;
-  line-height: 30px;
+  max-width: 100%;
+  /* line-height: 30px; */
   text-align: center;
   border: 1px solid #b1b1b1;
   font-family: "Roboto Regular";

@@ -16,7 +16,7 @@ ul.sub-menu {
   z-index: 1;
   display: none;
   background-color: #d9263c;
-  width: 150px;
+  width: 170px;
 }
 ul.sub-menu li:hover {
   background-color: #eb4f4f;
@@ -71,9 +71,9 @@ ul.sub-menu li:hover {
   outline: none;
   background: #111111;
   color: #fff;
-  padding: 10px 20px;
-  line-height: 13px;
-  font-size: 13px;
+  padding: 7px 20px;
+  /* line-height: 13px;
+  font-size: 13px; */
 }
 #head-body #search-wp #sm-s:hover {
   background: #444444;
@@ -247,4 +247,16 @@ ul.sub-menu li:hover {
 }
 #cart-wp #dropdown .action-cart a.checkout:hover {
   background: #af1427;
+}
+#btn-cart {
+  position: relative;
+}
+#totalProduct {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 0 5px;
+  border-radius: 100%;
+  color: #000;
 }

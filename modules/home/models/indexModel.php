@@ -31,7 +31,7 @@ function get_list_cat()
     $item = db_fetch_array("SELECT * FROM tbl_category where cat_status=1");
     return $item;
 }
-function get_all_product($keyw, $price, $id)
+function get_all_product($keyw, $price, $id, $min, $max)
 {
     $item = "SELECT *, (100 - CEILING((product_discount)/(product_price)*100)) as phantram,
     CONCAT(FORMAT(product_discount, 0),'đ') as price, CONCAT(FORMAT(product_price,0),'đ') as discount 
@@ -44,6 +44,9 @@ function get_all_product($keyw, $price, $id)
     }
     if ($id != "") {
         $item .= "and product_cat='$id' ";
+    }
+    if ($min != "") {
+        $item .= "and product_discount between $min and $max";
     }
     return db_query($item);
 }
